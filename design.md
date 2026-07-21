@@ -1,72 +1,35 @@
-# Design System & Blueprint: Danar Rais Professional Portfolio
+# Portfolio Design System & Project Layout Rules
 
-## 1. Konsep Utama
-Website ini adalah *Personal Portfolio Website* berkonsep "Monochromatic Minimalist & Bento Grid Layout". Desain menggunakan pendekatan *High-Contrast* (murni Hitam dan Putih tanpa abu-abu atau warna lain). Antarmuka mengandalkan tipografi yang tegas, garis struktural yang bersih, serta interaksi animasi yang *smooth* dan premium untuk menceritakan perpaduan latar belakang Administrasi Bisnis, *Web Development*, dan *Digital Branding*.
+## 1. Global Concept & Vibe
+- **Style:** Neo-brutalism / Swiss Design
+- **Vibe:** Bold, raw, high contrast, structured, and modern.
 
-## 2. Tech Stack
-- **Framework:** Next.js (App Router)
-- **Styling:** Tailwind CSS
-- **Animation:** Framer Motion (Wajib ditambahkan untuk efek transisi dan *scroll*)
-- **Icons:** Lucide React / Heroicons (Warna Hitam/Putih saja)
-- **Deployment:** Vercel
+## 2. Color Palette
+- **Primary Accent:** Lime Neon (`#DFFF00` atau `bg-[#DFFF00]`) - Gunakan untuk highlight, efek hover, atau background aksen.
+- **Base Colors:** White (`bg-white`) untuk background utama, Black (`text-black` / `bg-black`) untuk teks, outline, dan shadow.
 
-## 3. Tema & Warna (Color Palette)
-Super ketat dan minimalis. Tidak ada *gradient*, tidak ada warna abu-abu (kecuali terpaksa untuk efek *opacity* transparan).
-- **Background Utama:** `#FFFFFF` (Putih Bersih) atau sebaliknya `#000000` (Hitam Pekat) untuk *Dark Mode*.
-- **Teks Utama & Elemen:** `#000000` (Hitam) di atas latar putih.
-- **Borders & Garis Pembatas:** `#000000` (Hitam) - Tegas, tajam (1px solid black).
-- **Hover/Accent State:** Inversi warna (Misal: Tombol putih bergaris hitam, saat di-*hover* berubah menjadi latar hitam pekat dengan teks putih).
+## 3. UI Components & Tailwind Classes
+- **Borders:** Semua elemen penting (card, button, image placeholder) WAJIB menggunakan border hitam tebal: `border-4 border-black`.
+- **Shadows:** Dilarang menggunakan shadow blur (soft shadow). WAJIB menggunakan sharp/solid shadow: `shadow-[8px_8px_0_rgba(0,0,0,1)]` atau ukuran lain yang proporsional namun tetap kaku.
+- **Typography:** Gunakan font sans-serif. Heading (H1, H2) harus tebal (`font-black`), uppercase, dan padat (`tracking-tighter`). Heading section bisa menggunakan highlight kotak lime di belakang teksnya.
+- **Interaction (Hover):** Hover pada card/button mengubah background menjadi `#DFFF00` atau sedikit menggeser posisi (translate) untuk efek "ditekan".
 
-## 4. Tipografi (Typography)
-- **Heading:** `Inter` atau `Space Grotesk`, Font Weight: ExtraBold (800) atau Black (900). Huruf dibuat berukuran besar dan mendominasi.
-- **Body:** `Inter`, Font Weight: Regular (400).
+## 4. Project Detail Page Structure (Case Study Layout)
+Jika diminta membuat halaman detail project (`/project/[slug]`), WAJIB gunakan struktur layout vertikal berikut ini:
 
-## 5. Animasi & Interaksi (UI/UX)
-- **Scroll Reveal (Fade Up):** Setiap *Card* atau teks akan muncul perlahan dari bawah ke atas saat di-*scroll* (menggunakan Framer Motion).
-- **Magnetic Buttons:** Tombol sedikit mengikuti arah pergerakan *kursor/mouse* saat didekati.
-- **Hover Invert:** Saat *mouse* diarahkan ke *Project Card*, seluruh kotak berubah warna menjadi hitam dan teksnya menjadi putih (inversi instan dan tajam).
-- **Marquee Text (Opsional):** Teks berjalan secara horizontal untuk tag keahlian di latar belakang.
-- **Smooth Cursor:** *Kursor custom* berbentuk titik hitam/putih yang mengikuti pergerakan *mouse* dengan jeda *smooth*.
-
-## 6. Struktur Layout Antarmuka (UI Structure)
-
-### A. Navigation Bar (Sticky Top)
-- **Desain:** Kotak dengan *border* bawah hitam tajam. Latar putih transparan (*blur*).
-- **Kiri:** Logo inisial "DR" atau teks "Danar Rais." (tebal).
-- **Kanan:** Tautan navigasi (`About`, `Projects`, `Experience`) dan tombol "Download CV" (Garis luar hitam, di-*hover* jadi hitam padat).
-
-### B. Hero Section (Header Utama)
-Desain *split-screen* (kiri teks, kanan visual) di layar besar, vertikal di HP.
-- **Kiri (Teks):**
-  - *Badge/Tag:* "Based in Malang, Indonesia 🇮🇩" (Kotak bergaris hitam).
-  - *Headline:* "Bridging Business Strategy with Web Technology."
-  - *Sub-headline:* Mahasiswa Administrasi Bisnis yang berfokus pada pengembangan sistem web, analitik data, dan *digital branding*.
-  - *Call to Action (CTA):* Tombol utama "View My Work" dan tombol sekunder "Contact Me".
-- **Kanan (Visual):**
-  - Foto profesional menggunakan jas. Filter foto dibuat **Black & White (Grayscale)** agar senada dengan tema.
-
-### C. Featured Projects (Bagian Inti)
-Menggunakan *Grid Layout* bergaris hitam tegas ala koran/editorial (*Borders everywhere*).
-
-**Project Card 1: Web Development**
-- **Judul:** Web-Based Sponsorship Marketplace System
-- **Deskripsi:** Sistem informasi untuk memfasilitasi kolaborasi antara perusahaan dan penyelenggara *event*.
-- **Tech Stack Tags:** `Laravel`, `MySQL`, `Tailwind CSS`, `UML` (Tag berbentuk kotak hitam/putih tajam).
-- **Tautan:** "View Case Study" / "GitHub Repo".
-
-**Project Card 2: Digital Branding & Campaign**
-- **Judul:** Merakids Agency - Wuffy Space Campaign
-- **Deskripsi:** Strategi pemasaran media sosial dan manajemen konten pilar untuk kafe & perpustakaan anak.
-- **Skill Tags:** `Social Media Strategy`, `Content Design`, `Copywriting`
-
-### D. Experience & Leadership (Bento Grid Style)
-Kotak-kotak bersudut tajam (*rounded-none*) atau membulat tegas (*rounded-2xl* tapi *border* tebal hitam):
-- **Card A:** Pengalaman *Public Speaking* (MC & Moderator Showreel).
-- **Card B:** Kepemimpinan (Ketua Pelaksana Studi Banding FORMAPI).
-- **Card C:** Operasional Bisnis (Pengembangan model bisnis "Pisang Kukus").
-
-### E. Footer
-- Garis batas hitam tebal memisahkan bagian atas dengan *footer*.
-- Teks penutup: "Let's build something great together."
-- *Contact Links:* Email, LinkedIn, GitHub.
-- *Copyright:* "© 2026 Danar Rais. Crafted with Next.js & Framer Motion."
+1.  **Top Bar:** Tombol "Back to Projects" di kiri atas bergaya brutalism.
+2.  **Hero Section:** 
+    - `Title` (H1, Besar, Uppercase)
+    - `Tagline` (Deskripsi singkat)
+    - `Cover Image` (Kotak div besar sebagai placeholder gambar dengan shadow brutalism)
+3.  **Meta Info Grid:** Grid kotak-kotak bergaris tegas yang menampilkan:
+    - `Role` (contoh: Project Manager)
+    - `Timeline` (contoh: Feb - Apr 2026)
+    - `Team` (contoh: Solo / 4 Members)
+    - `Tech Stack` / Tools (berupa tags/badges)
+4.  **Content Sections (The Case Study):**
+    - **The Problem:** Penjelasan tantangan/masalah bisnis.
+    - **The Solution:** Bagaimana teknologi/strategi memecahkan masalah tersebut.
+    - **Key Features:** Daftar 3-4 fitur utama (gunakan format Card bergaya brutalism).
+    - **Result & Impact:** Hasil metrik atau output akhir proyek.
+5.  **Actionable Links (Bottom):** Tombol besar untuk `Visit Live Site` atau `View GitHub/Code`.
