@@ -1,51 +1,205 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ArrowUpRight } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { Moon, Sun, Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
+import { dictionary } from '@/content/dictionary';
 
 export default function Navbar() {
 	const pathname = usePathname();
+	const { theme, setTheme } = useTheme();
+	const { lang, setLang } = useLanguage();
+	const [mounted, setMounted] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-	const aboutHref = pathname === '/' ? '#about' : '/#about';
+	useEffect(() => {
+		setMounted(true);
+		const handleScroll = () => {
+			setScrolled(window.scrollY > 20);
+		};
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
+
+	const t = dictionary[lang].nav;
+
+	const navLinks = [
+		{ name: t.about, href: '/#about' },
+		{ name: t.projects, href: '/project' },
+		{ name: t.certificates, href: '/#certificates' },
+		{ name: t.contact, href: '/#contact' },
+	];
 
 	return (
-		<nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b-2 border-black font-sans antialiased">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-5 flex justify-between items-center">
-				<Link href="/" className="font-black text-xl md:text-2xl tracking-tighter uppercase relative group leading-none">
-					Danar Rais.
+		<nav
+			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b border-transparent ${scrolled
+					? 'bg-background/70 backdrop-blur-[18px] border-border'
+					: 'bg-transparent backdrop-blur-none'
+				}`}
+		>
+			<div className="max-w-[1280px] mx-auto px-5 md:px-8 h-[72px] md:h-[80px] flex justify-between items-center">
+            <Link href="/" className="font-medium text-2xl tracking-tight z-50 relative">
+					Danar Rais Alhakim.
 				</Link>
-				<div className="hidden md:flex items-center space-x-10 font-bold uppercase text-sm tracking-widest leading-none">
-					<Link href={aboutHref} className="hover:line-through transition-all">About</Link>
-					<Link href="/project" className="hover:line-through transition-all">Projects</Link>
-					<Link href="/" className="px-5 py-2 border-2 border-black font-black bg-white text-black hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-2 group leading-none">
-						Download CV
-						<ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform" />
-					</Link>
+
+				{/* Desktop Nav */}
+				<div className="hidden md:flex items-center space-x-8">
+					<div className="flex items-center space-x-6 text-sm font-medium text-secondary">
+						{navLinks.map((link) => {
+							const isActive = pathname === link.href || (pathname.startsWith('/project') && link.name === 'Projects');
+							return (
+								<Link
+									key={link.name}
+									href={link.href}
+									className={`relative transition-all duration-300 hover:text-primary py-2 ${isActive ? 'text-primary' : ''}`}
+								>
+									{link.name}
+									{isActive && (
+										<motion.div
+											layoutId="underline"
+											className="absolute left-0 right-0 bottom-0 h-[1px] bg-primary"
+										/>
+									)}
+								</Link>
+							);
+						})}
+					</div>
+
+					<div className="h-4 w-px bg-divider"></div>
+
+					<div className="flex items-center space-x-4">
+						{/* Language Toggle */}
+						<div className="flex items-center bg-surface p-1 rounded-full text-xs font-semibold">
+							<button
+								onClick={() => setLang('ID')}
+								className={`px-3 py-1 rounded-full transition-all ${lang === 'ID' ? 'bg-background shadow-sm text-primary' : 'text-muted hover:text-primary'}`}
+							>
+								ID
+							</button>
+							<button
+								onClick={() => setLang('EN')}
+								className={`px-3 py-1 rounded-full transition-all ${lang === 'EN' ? 'bg-background shadow-sm text-primary' : 'text-muted hover:text-primary'}`}
+							>
+								EN
+							</button>
+						</div>
+
+						{/* Theme Toggle */}
+						{mounted && (
+							<button
+								onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+								className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface transition-colors relative"
+								aria-label="Toggle Theme"
+							>
+								<motion.div
+									initial={false}
+									animate={{ rotate: theme === 'dark' ? 180 : 0, scale: theme === 'dark' ? 0.8 : 1 }}
+									transition={{ duration: 0.3 }}
+									className="absolute"
+								>
+									<Sun className="w-5 h-5 text-primary opacity-0 dark:opacity-100" />
+								</motion.div>
+								<motion.div
+									initial={false}
+									animate={{ rotate: theme === 'dark' ? 0 : -180, scale: theme === 'dark' ? 1 : 0.8 }}
+									transition={{ duration: 0.3 }}
+									className="absolute"
+								>
+									<Moon className="w-5 h-5 text-primary dark:opacity-0" />
+								</motion.div>
+							</button>
+						)}
+
+						{/* Download CV */}
+						<Link
+							href="/cv.pdf"
+							target="_blank"
+							className="px-5 py-2.5 bg-accent text-background rounded-[14px] font-medium text-sm hover:-translate-y-0.5 hover:shadow-hover transition-all flex items-center gap-2"
+						>
+							{t.downloadCv}
+						</Link>
+					</div>
 				</div>
-				<div className="md:hidden text-black">
-					<button
-						type="button"
-						aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-						onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-						className="cursor-pointer"
-					>
-						<span className="text-2xl leading-none">{isMobileMenuOpen ? '×' : '☰'}</span>
-					</button>
-				</div>
+
+				{/* Mobile Toggle */}
+				<button
+					className="md:hidden z-50 text-primary p-2"
+					onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+				>
+					{isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+				</button>
 			</div>
-			{isMobileMenuOpen && (
-				<div className="md:hidden border-t-2 border-black px-4 py-4 bg-white flex flex-col gap-4 font-bold uppercase text-xs sm:text-sm tracking-widest leading-none">
-					<Link href={aboutHref} onClick={() => setIsMobileMenuOpen(false)} className="w-fit">About</Link>
-					<Link href="/project" onClick={() => setIsMobileMenuOpen(false)} className="w-fit">Projects</Link>
-					<Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="w-fit px-4 py-2 mt-2 border-2 border-black font-black bg-white text-black hover:bg-black hover:text-white transition-colors duration-300 flex items-center gap-2 leading-none">
-						Download CV
-						<ArrowUpRight className="w-4 h-4" />
-					</Link>
-				</div>
-			)}
+
+			{/* Mobile Menu */}
+			<AnimatePresence>
+				{isMobileMenuOpen && (
+					<motion.div
+						initial={{ opacity: 0, y: -20 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: -20 }}
+						transition={{ duration: 0.3 }}
+						className="fixed inset-0 z-40 bg-background flex flex-col pt-[72px] px-5"
+					>
+						<div className="flex flex-col gap-6 mt-8 text-2xl font-medium">
+							{navLinks.map((link) => (
+								<Link
+									key={link.name}
+									href={link.href}
+									onClick={() => setIsMobileMenuOpen(false)}
+									className="border-b border-border pb-4 hover:pl-4 transition-all"
+								>
+									{link.name}
+								</Link>
+							))}
+						</div>
+
+						<div className="mt-auto mb-10 flex flex-col gap-6">
+							<div className="flex items-center justify-between">
+								<span className="font-medium text-secondary">Language</span>
+								<div className="flex items-center bg-surface p-1 rounded-full text-sm font-semibold">
+									<button
+										onClick={() => setLang('ID')}
+										className={`px-4 py-2 rounded-full transition-all ${lang === 'ID' ? 'bg-background shadow-sm text-primary' : 'text-muted'}`}
+									>
+										ID
+									</button>
+									<button
+										onClick={() => setLang('EN')}
+										className={`px-4 py-2 rounded-full transition-all ${lang === 'EN' ? 'bg-background shadow-sm text-primary' : 'text-muted'}`}
+									>
+										EN
+									</button>
+								</div>
+							</div>
+
+							<div className="flex items-center justify-between">
+								<span className="font-medium text-secondary">Theme</span>
+								{mounted && (
+									<button
+										onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+										className="p-3 bg-surface rounded-full"
+									>
+										{theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+									</button>
+								)}
+							</div>
+
+							<Link
+								href="/cv.pdf"
+								onClick={() => setIsMobileMenuOpen(false)}
+								className="w-full py-4 bg-accent text-background rounded-xl font-medium text-center mt-4"
+							>
+								{t.downloadCv}
+							</Link>
+						</div>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</nav>
 	);
 }
