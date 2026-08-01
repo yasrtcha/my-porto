@@ -13,6 +13,9 @@ const iconMap: Record<string, any> = {
   'notion': Icons.siNotion,
   'meta': Icons.siMeta,
   'miro': Icons.siMiro,
+  'flutter': Icons.siFlutter,
+  'dart': Icons.siDart,
+  'supabase': Icons.siSupabase,
 };
 
 interface TechStackIconProps {

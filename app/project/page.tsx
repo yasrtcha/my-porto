@@ -40,7 +40,7 @@ export default function ProjectList() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project) => (
               <motion.div key={project.slug} variants={itemVariants}>
-                <Link 
+                <Link
                   href={`/project/${project.slug}`}
                   // Ditambahkan class 'relative' di sini agar absolute icon mengikuti ukuran card
                   className="group block bg-card rounded-[24px] p-6 border border-border hover:border-muted hover:-translate-y-2 hover:shadow-floating transition-all duration-300 h-full flex flex-col relative"
@@ -60,17 +60,17 @@ export default function ProjectList() {
                         {project.role}
                       </span>
                     </div>
-                    
+
                     <h3 className="text-2xl font-medium text-primary mb-3">
                       {project.title}
                     </h3>
-                    
+
                     <p className="text-secondary mb-6 flex-1 line-clamp-2">
                       {project.shortDescription[lang]}
                     </p>
 
                     <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-divider">
-                      {project.techStack.flatMap(stack => stack.items).slice(0, 3).map((item, idx) => (
+                      {project.techStack.flatMap(stack => stack.items).map((item, idx) => (
                         <TechStackIcon key={idx} name={item.name} icon={item.icon} />
                       ))}
                     </div>

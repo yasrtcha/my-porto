@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi';
 import { useLanguage } from '../context/LanguageContext';
 import { dictionary } from '@/content/dictionary';
+import PixelTransition from './PixelTransition';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -105,15 +105,37 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             variants={imageVariants}
-            className="relative w-full max-w-[320px] md:max-w-[400px] aspect-[4/5] rounded-[20px] overflow-hidden"
+            className="relative w-full max-w-[320px] md:max-w-[400px]"
           >
-            <div className="absolute inset-0 bg-gradient-to-tr from-surface to-transparent opacity-50 z-0" />
-            <Image
-              src="/ppp.jpeg"
-              alt="Danar Rais"
-              fill
-              className="object-cover z-10"
-              priority
+            <PixelTransition
+              firstContent={
+                <img
+                  src="https://res.cloudinary.com/oyuxswwy/image/upload/v1785603093/ppp_ngtadd.jpg"
+                  alt="default pixel transition content, a cat!"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              }
+              secondContent={
+                <img
+                  src="https://res.cloudinary.com/oyuxswwy/image/upload/v1785603107/cat_it_pkkqqk.jpg"
+                  alt="default pixel transition content, a cat!"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              }
+              gridSize={8}
+              pixelColor="#ffffff"
+              once={false}
+              animationStepDuration={0.4}
+              aspectRatio="125%"
+              className="rounded-[20px] overflow-hidden"
+              style={{
+                width: "100%",
+                maxWidth: "none",
+                backgroundColor: "transparent",
+                borderWidth: 0,
+                borderColor: "transparent",
+                boxShadow: "none",
+              }}
             />
           </motion.div>
         </div>

@@ -57,25 +57,26 @@ export const projects: Project[] = [
     role: 'Fullstack Developer',
     duration: { ID: '4 Bulan', EN: '4 Months' },
     platform: 'Web Application',
-    isPrivate: true,
-    heroImage: '/projects/sponsorea/hero.jpg',
+    isPrivate: false,
+    githubUrl: 'https://github.com/yasrtcha/sponsorea',
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/v1785598347/mockupp_sponsorea_pyrb3s.png',
     overview: {
       ID: [
-        'Sponsorea adalah platform marketplace yang mempertemukan penyelenggara event dengan perusahaan penyedia sponsorship. Tujuan utama platform ini adalah menyederhanakan proses pencarian dana dan penyaluran CSR.',
-        'Sistem ini dirancang untuk menangani ribuan proposal secara sistematis, memberikan tracking status, dan memfasilitasi komunikasi langsung antara kedua belah pihak.'
+        'Sponsorea adalah platform marketplace yang dikembangkan sebagai proyek Tugas Akhir (TA) untuk mempertemukan penyelenggara event dengan perusahaan penyedia sponsorship.',
+        'Sistem ini dirancang untuk menangani proposal secara sistematis, memberikan fitur tracking status, dan serta dilengkapi dengan fitur cetak laporan untuk mempermudah rekapitulasi data kerja sama.'
       ],
       EN: [
-        'Sponsorea is a marketplace platform that connects event organizers with companies providing sponsorship. The main goal of this platform is to simplify the fundraising and CSR distribution process.',
-        'The system is designed to handle thousands of proposals systematically, providing status tracking, and facilitating direct communication between both parties.'
+        'Sponsorea is a marketplace platform developed as a final project to connects event organizers with companies providing sponsorship. The main goal of this platform is to simplify the fundraising and distribution sponsorship funds.',
+        'The system is designed to handle proposals systematically, provide status tracking features, and include a report-printing feature to facilitate the compilation of partnership data.'
       ]
     },
     problem: {
-      ID: 'Penyelenggara event sering kesulitan menemukan sponsor yang relevan, sementara perusahaan kesulitan menyortir ratusan proposal yang masuk melalui email secara tidak terstruktur.',
-      EN: 'Event organizers often struggle to find relevant sponsors, while companies have difficulty sorting through hundreds of unstructured proposals received via email.'
+      ID: 'Penyelenggara event sering kesulitan menemukan sponsor yang relevan, sementara perusahaan kesulitan menyortir ratusan proposal yang masuk melalui email, atau media sosial secara tidak terstruktur.',
+      EN: 'Event organizers often struggle to find relevant sponsors, while companies have difficulty sorting through hundreds of unstructured proposals received via email or social media.'
     },
     solution: {
-      ID: 'Membangun platform terpusat dengan sistem agregasi proposal, filter kategori yang relevan, dan dashboard tracking status proposal secara real-time.',
-      EN: 'Building a centralized platform with a proposal aggregation system, relevant category filters, and a real-time proposal status tracking dashboard.'
+      ID: 'Membangun platform terpusat dengan sistem pengelolaan proposal, filter kategori yang relevan, dan dashboard tracking status proposal secara real-time.',
+      EN: 'Building a centralized platform with a proposal management system, relevant category filters, and a real-time proposal status tracking dashboard.'
     },
     rolesDetails: [
       {
@@ -88,13 +89,13 @@ export const projects: Project[] = [
       {
         title: { ID: 'UI/UX Designer', EN: 'UI/UX Designer' },
         tasks: {
-          ID: ['Wireframing', 'Prototyping', 'Sistem Desain'],
-          EN: ['Wireframing', 'Prototyping', 'Design System']
+          ID: ['Wireframing', 'Prototyping'],
+          EN: ['Wireframing', 'Prototyping']
         }
       }
     ],
     techStack: [
-      { category: 'Frontend', items: [{ name: 'Next.js', icon: 'nextdotjs' }, { name: 'Tailwind CSS', icon: 'tailwindcss' }] },
+      { category: 'Frontend', items: [{ name: 'Tailwind CSS', icon: 'tailwindcss' }] },
       { category: 'Backend', items: [{ name: 'Laravel', icon: 'laravel' }, { name: 'MySQL', icon: 'mysql' }] }
     ],
     features: [
@@ -108,8 +109,19 @@ export const projects: Project[] = [
       }
     ],
     gallery: [
-      '/projects/sponsorea/1.jpg',
-      '/projects/sponsorea/2.jpg'
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785556192/login.jpg_yzim8z.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785556274/register_kfccom.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785556444/isi_profile_p4wu3u.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558314/verif_ufs1o4.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558312/dashboard_admin_keehsp.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558313/verifikasi_akun_eimoy2.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558312/manajemen_kategori_b2zb4p.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558231/dashboard_xjaxko.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558232/explore_ic7hcq.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558231/data_event_db9tks.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558231/status_pengajuan_iwqjsj.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558232/tawaran_masuk_oceg0x.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558231/rekap_pf271b.png'
     ],
     challenges: [
       {
@@ -124,48 +136,47 @@ export const projects: Project[] = [
     tags: ['Laravel', 'MySQL', 'Tailwind CSS']
   },
   {
-    slug: 'merakids',
-    title: 'Merakids Agency Wuffy Space',
+    slug: 'wellspace',
+    title: 'Wellspace',
     shortDescription: {
-      ID: 'Strategi pemasaran media sosial dan manajemen konten pilar komprehensif untuk kafe & perpustakaan anak.',
-      EN: 'Comprehensive social media marketing strategy and pillar content management for a kids cafe & library.'
+      ID: 'Aplikasi mobile dan website berbasis kesehatan yang menyediakan fitur-fitur untuk membantu pengguna mengelola kesehatan mental dan fisik mereka.',
+      EN: 'A health-based mobile and website application that provides features to help users manage their mental and physical health.'
     },
-    category: 'Digital Branding',
-    role: 'Social Media Strategist',
-    duration: { ID: '3 Bulan', EN: '3 Months' },
-    platform: 'Instagram & TikTok',
-    isPrivate: false,
-    demoUrl: 'https://instagram.com/wuffyspace',
-    heroImage: '/projects/merakids/hero.jpg',
+    category: 'WEB & MOBILE DEVELOPMENT',
+    role: 'Web Developer',
+    duration: { ID: '2 Bulan', EN: '2 Months' },
+    platform: 'Website & Mobile Application',
+    isPrivate: true,
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/v1785598801/hero_r9irpr.png',
     overview: {
       ID: [
-        'Wuffy Space membutuhkan strategi konten yang konsisten untuk membangun awareness tentang kafe ramah anak dan perpustakaan edukatif.',
-        'Fokus utama adalah meningkatkan engagement dan reach melalui konten pilar edukatif serta interaktif.'
+        'WellSpace adalah aplikasi mobile dan website berbasis kesehatan mental yang membantu pengguna memantau kondisi emosional serta menjaga kesejahteraan mental melalui fitur Mood Tracker, Q&A, dan Kutipan Harian.',
+        'Platform ini dirancang untuk memberikan dukungan awal agar pengguna lebih sadar terhadap kondisi mentalnya dan membangun kebiasaan positif.'
       ],
       EN: [
-        'Wuffy Space needed a consistent content strategy to build awareness about its kid-friendly cafe and educational library.',
-        'The main focus was to increase engagement and reach through educational and interactive pillar content.'
+        'WellSpace is a mobile and web-based mental health application designed to help users monitor their emotional well-being through features such as Mood Tracker, Q&A, and Daily Quotes.',
+        'The platform provides accessible tools to encourage self-awareness and support positive mental health habits.'
       ]
     },
     problem: {
-      ID: 'Engagement rate yang stagnan dan kurangnya identitas visual yang kuat di media sosial.',
-      EN: 'Stagnant engagement rates and lack of a strong visual identity on social media.'
+      ID: 'Banyak orang masih kesulitan mengenali kondisi kesehatan mental mereka sejak dini serta belum memiliki media yang mudah diakses untuk memantau suasana hati dan memperoleh informasi maupun motivasi terkait kesehatan mental.',
+      EN: 'Many people find it difficult to recognize their mental health condition at an early stage and lack an accessible platform to track their emotions while obtaining reliable information and daily motivation.'
     },
     solution: {
-      ID: 'Merancang ulang identitas visual media sosial dan menerapkan kalender konten berbasis pilar edukasi.',
-      EN: 'Redesigned the social media visual identity and implemented an education-pillar-based content calendar.'
+      ID: 'Menyediakan platform untuk mencatat suasana hati, mengakses fitur Q&A, dan memperoleh kutipan harian guna membantu pengguna menjaga kesehatan mental.',
+      EN: 'Provides a platform to track daily moods, access a Q&A feature, and receive daily quotes to support users mental well-being.'
     },
     rolesDetails: [
       {
-        title: { ID: 'Social Media Strategist', EN: 'Social Media Strategist' },
+        title: { ID: 'Web Developer', EN: 'Web Developer' },
         tasks: {
-          ID: ['Perencanaan Konten', 'Riset Audiens', 'Pemantauan Analitik'],
-          EN: ['Content Planning', 'Audience Research', 'Analytics Monitoring']
+          ID: ['Pengembangan Admin Panel', 'Perancangan Basis Data', 'Integrasi Sistem'],
+          EN: ['Admin Panel Development', 'Database Design', 'System Integration']
         }
       }
     ],
     techStack: [
-      { category: 'Tools', items: [{ name: 'Figma', icon: 'figma' }, { name: 'Notion', icon: 'notion' }, { name: 'Meta Business Suite', icon: 'meta' }] }
+      { category: 'Tools', items: [{ name: 'Flutter', icon: 'flutter' }, { name: 'Laravel', icon: 'laravel' }, { name: 'Dart', icon: 'dart' }, { name: 'MySql', icon: 'mysql' }] }
     ],
     features: [
       {
@@ -174,7 +185,19 @@ export const projects: Project[] = [
       }
     ],
     gallery: [
-      '/projects/merakids/1.jpg'
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588019/web_yil6bh.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588018/qna_web_yaxizh.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588018/kutipan_web_wyttk3.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588018/ajukan_pertanyaan_zjus00.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588018/admin_oehlyv.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588018/kelola_user_lljyte.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588019/kelola_qna_cl0ogq.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588019/kelola_kutipan_rbzdtc.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785574380/login_mobile_yuxwvh.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785589690/dashboard_pengguna_mobile_y2moxf.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785589691/qna_mobile_nyn6ef.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785589691/kutipan_harian_mobile_ar9xam.png'
+
     ],
     challenges: [
       {
@@ -186,7 +209,7 @@ export const projects: Project[] = [
       ID: ['Peningkatan engagement sebesar 40%', 'Konsistensi identitas brand', 'Jadwal konten yang terstruktur'],
       EN: ['40% increase in engagement', 'Consistent brand identity', 'Structured content schedule']
     },
-    tags: ['Social Media Strategy', 'Content Design']
+    tags: ['MySql', 'Content Design']
   },
   {
     slug: 'e-commerce-admin',
