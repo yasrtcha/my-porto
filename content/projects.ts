@@ -59,7 +59,7 @@ export const projects: Project[] = [
     platform: 'Web Application',
     isPrivate: false,
     githubUrl: 'https://github.com/yasrtcha/sponsorea',
-    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/v1785598347/mockupp_sponsorea_pyrb3s.png',
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785598347/mockupp_sponsorea_pyrb3s.png',
     overview: {
       ID: [
         'Sponsorea adalah platform marketplace yang dikembangkan sebagai proyek Tugas Akhir (TA) untuk mempertemukan penyelenggara event dengan perusahaan penyedia sponsorship.',
@@ -109,19 +109,19 @@ export const projects: Project[] = [
       }
     ],
     gallery: [
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785556192/login.jpg_yzim8z.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785556274/register_kfccom.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785556444/isi_profile_p4wu3u.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558314/verif_ufs1o4.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558312/dashboard_admin_keehsp.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558313/verifikasi_akun_eimoy2.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558312/manajemen_kategori_b2zb4p.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558231/dashboard_xjaxko.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558232/explore_ic7hcq.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558231/data_event_db9tks.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558231/status_pengajuan_iwqjsj.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558232/tawaran_masuk_oceg0x.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785558231/rekap_pf271b.png'
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785556192/login.jpg_yzim8z.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785556274/register_kfccom.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785556444/isi_profile_p4wu3u.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785558314/verif_ufs1o4.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785558312/dashboard_admin_keehsp.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785558313/verifikasi_akun_eimoy2.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785558312/manajemen_kategori_b2zb4p.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785558231/dashboard_xjaxko.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785558232/explore_ic7hcq.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785558231/data_event_db9tks.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785558231/status_pengajuan_iwqjsj.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785558232/tawaran_masuk_oceg0x.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785558231/rekap_pf271b.png'
     ],
     challenges: [
       {
@@ -147,7 +147,7 @@ export const projects: Project[] = [
     duration: { ID: '2 Bulan', EN: '2 Months' },
     platform: 'Website & Mobile Application',
     isPrivate: true,
-    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/v1785598801/hero_r9irpr.png',
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785598801/hero_r9irpr.png',
     overview: {
       ID: [
         'WellSpace adalah aplikasi mobile dan website berbasis kesehatan mental yang membantu pengguna memantau kondisi emosional serta menjaga kesejahteraan mental melalui fitur Mood Tracker, Q&A, dan Kutipan Harian.',
@@ -185,18 +185,18 @@ export const projects: Project[] = [
       }
     ],
     gallery: [
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588019/web_yil6bh.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588018/qna_web_yaxizh.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588018/kutipan_web_wyttk3.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588018/ajukan_pertanyaan_zjus00.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588018/admin_oehlyv.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588018/kelola_user_lljyte.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588019/kelola_qna_cl0ogq.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785588019/kelola_kutipan_rbzdtc.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785574380/login_mobile_yuxwvh.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785589690/dashboard_pengguna_mobile_y2moxf.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785589691/qna_mobile_nyn6ef.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/v1785589691/kutipan_harian_mobile_ar9xam.png'
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785588019/web_yil6bh.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785588018/qna_web_yaxizh.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785588018/kutipan_web_wyttk3.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785588018/ajukan_pertanyaan_zjus00.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785588018/admin_oehlyv.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785588018/kelola_user_lljyte.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785588019/kelola_qna_cl0ogq.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785588019/kelola_kutipan_rbzdtc.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785574380/login_mobile_yuxwvh.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785589690/dashboard_pengguna_mobile_y2moxf.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785589691/qna_mobile_nyn6ef.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785589691/kutipan_harian_mobile_ar9xam.png'
 
     ],
     challenges: [
@@ -212,40 +212,40 @@ export const projects: Project[] = [
     tags: ['MySql', 'Content Design']
   },
   {
-    slug: 'e-commerce-admin',
-    title: 'E-Commerce Admin Dashboard',
+    slug: 'water-level',
+    title: 'Water Level',
     shortDescription: {
-      ID: 'Dashboard dummy untuk monitoring penjualan, stok produk, dan performa campaign harian.',
-      EN: 'Dummy dashboard for monitoring sales, product stock, and daily campaign performance.'
+      ID: 'Sistem IoT berbasis ESP32 untuk memantau ketinggian air secara real-time, memberikan status kondisi (Normal, Waspada, Banjir), mengontrol pakan otomatis, serta menampilkan seluruh data melalui dashboard website.',
+      EN: 'An ESP32-based IoT system for real-time water level monitoring, water condition classification (Normal, Warning, Flood), automatic feeding, and web dashboard monitoring.'
     },
-    category: 'Frontend Development',
-    role: 'Frontend Developer',
+    category: 'Web & IoT',
+    role: 'Web Developer',
     duration: { ID: '1 Bulan', EN: '1 Month' },
-    platform: 'Web Dashboard',
+    platform: 'Web Dashboard & IoT',
     isPrivate: false,
     githubUrl: 'https://github.com/yasrtcha',
-    heroImage: '/projects/ecommerce/hero.jpg',
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785650759/hero_agfrqv.png',
     overview: {
       ID: [
-        'Sebuah eksplorasi desain dan implementasi admin dashboard untuk platform e-commerce.',
-        'Fokus pada visualisasi data yang responsif dan UX yang intuitif untuk pengelola toko.'
+        'Proyek ini merupakan sistem monitoring berbasis Internet of Things (IoT) yang menggunakan sensor ultrasonik HC-SR04 untuk mengukur ketinggian air.',
+        'Data diproses oleh ESP32 dan dikirim ke dashboard website untuk pemantauan secara real-time. Sistem juga dilengkapi dengan servo sebagai mekanisme pemberian pakan otomatis serta indikator LED yang menampilkan status kondisi air.'
       ],
       EN: [
-        'A design exploration and implementation of an admin dashboard for an e-commerce platform.',
-        'Focuses on responsive data visualization and an intuitive UX for store managers.'
+        'This project is an Internet of Things (IoT) monitoring system that utilizes an HC-SR04 ultrasonic sensor to measure water levels.',
+        'The ESP32 processes the sensor data and sends it to a web dashboard for real-time monitoring. The system also includes a servo for automatic feeding and LED indicators to display the current water condition.'
       ]
     },
     problem: {
-      ID: 'Banyak admin dashboard yang kompleks dan membingungkan pengguna baru.',
-      EN: 'Many admin dashboards are complex and confusing for new users.'
+      ID: 'Pemantauan ketinggian air dan pemberian pakan secara manual kurang efisien serta berisiko menyebabkan keterlambatan dalam mendeteksi kondisi yang berpotensi menimbulkan banjir.',
+      EN: 'Manual water level monitoring and feeding are inefficient and may delay the detection of critical water conditions that could lead to flooding.'
     },
     solution: {
-      ID: 'Mendesain ulang tata letak dengan memprioritaskan metrik utama dan navigasi yang bersih.',
-      EN: 'Redesigned the layout by prioritizing key metrics and clean navigation.'
+      ID: 'Membangun sistem IoT yang mampu memantau ketinggian air secara real-time, memberikan status kondisi, mengotomatisasi pemberian pakan, dan menampilkan data melalui dashboard website.',
+      EN: 'Developed an IoT system that monitors water levels in real time, classifies water conditions, automates feeding, and displays monitoring data through a web dashboard.'
     },
     rolesDetails: [
       {
-        title: { ID: 'Frontend Developer', EN: 'Frontend Developer' },
+        title: { ID: 'Web Developer', EN: 'Web Developer' },
         tasks: {
           ID: ['Pengembangan Komponen', 'Manajemen State', 'Visualisasi Data'],
           EN: ['Component Development', 'State Management', 'Data Visualization']
@@ -253,7 +253,7 @@ export const projects: Project[] = [
       }
     ],
     techStack: [
-      { category: 'Frontend', items: [{ name: 'Next.js', icon: 'nextdotjs' }, { name: 'TypeScript', icon: 'typescript' }, { name: 'Tailwind CSS', icon: 'tailwindcss' }, { name: 'Recharts', icon: 'react' }] }
+      { category: 'Frontend', items: [{ name: 'Laravel', icon: 'laravel' }, { name: 'PHP', icon: 'php' }, { name: 'Tailwind CSS', icon: 'tailwindcss' }, { name: 'Arduino', icon: 'arduino' }, {name: 'MySQL', icon: 'mysql'}] }
     ],
     features: [
       {
@@ -261,7 +261,14 @@ export const projects: Project[] = [
         description: { ID: 'Visualisasi data penjualan.', EN: 'Sales data visualization.' }
       }
     ],
-    gallery: [],
+    gallery: [
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785648406/dashboard_website_vyonr7.jpg',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785648019/maket_arw494.jpg',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785648408/maket_2_lgk3o5.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785648407/1_bskgjx.jpg',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785648407/2_cwik5o.jpg',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785648020/1_qxagxj.jpg'
+    ],
     challenges: [],
     results: {
       ID: ['Desain Responsif', 'Mode Gelap'],

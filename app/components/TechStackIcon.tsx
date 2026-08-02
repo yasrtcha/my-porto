@@ -16,6 +16,8 @@ const iconMap: Record<string, any> = {
   'flutter': Icons.siFlutter,
   'dart': Icons.siDart,
   'supabase': Icons.siSupabase,
+  'php':Icons.siPhp,
+  'arduino':Icons.siArduino,
 };
 
 interface TechStackIconProps {

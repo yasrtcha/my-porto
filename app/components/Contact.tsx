@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Send } from "lucide-react";
-import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi';
+import { Mail } from "lucide-react";
+import { FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useLanguage } from '../context/LanguageContext';
 import { dictionary } from '@/content/dictionary';
@@ -43,84 +43,35 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start max-w-[1024px] mx-auto w-full">
-          {/* Form Section */}
-          <motion.div variants={revealVariants} className="flex flex-col gap-8 w-full order-2 md:order-1">
-            <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-sm font-semibold text-secondary">{t.form.name}</label>
-                <input 
-                  type="text" 
-                  id="name"
-                  placeholder={t.form.namePlaceholder}
-                  className="w-full px-5 py-4 rounded-[14px] bg-surface border border-border text-primary placeholder:text-muted focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
-                />
+        <motion.div variants={revealVariants} className="flex flex-col gap-10 max-w-[1024px] mx-auto w-full">
+          <div className="flex items-center justify-center gap-4">
+            <a href="mailto:danarraisa@gmail.com" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
+              <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
+                <Mail className="w-5 h-5 text-primary" />
               </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-sm font-semibold text-secondary">{t.form.email}</label>
-                <input 
-                  type="email" 
-                  id="email"
-                  placeholder={t.form.emailPlaceholder}
-                  className="w-full px-5 py-4 rounded-[14px] bg-surface border border-border text-primary placeholder:text-muted focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
-                />
+            </a>
+            <a href="https://wa.me/085747784405" target="_blank" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
+              <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
+                <FaWhatsapp className="w-5 h-5 text-primary" />
               </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-sm font-semibold text-secondary">{t.form.message}</label>
-                <textarea 
-                  id="message"
-                  rows={5}
-                  placeholder={t.form.messagePlaceholder}
-                  className="w-full px-5 py-4 rounded-[14px] bg-surface border border-border text-primary placeholder:text-muted focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none"
-                />
+            </a>
+            <a href="https://www.linkedin.com/in/danar-rais-alhakim/" target="_blank" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
+              <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
+                <FiLinkedin className="w-5 h-5 text-primary" />
               </div>
-              <button 
-                type="submit"
-                className="w-full py-4 bg-accent text-background rounded-[14px] font-medium text-[15px] hover:-translate-y-0.5 hover:shadow-hover transition-all flex items-center justify-center gap-2 mt-2"
-              >
-                <Send className="w-4 h-4" />
-                {t.form.send}
-              </button>
-            </form>
-          </motion.div>
-
-          {/* Direct Contact */}
-          <motion.div variants={revealVariants} className="flex flex-col gap-10 order-1 md:order-2">
-            <div className="flex flex-col gap-4">
-              <h3 className="text-2xl font-medium text-primary">{t.direct.heading}</h3>
-              <p className="text-secondary leading-relaxed">
-                {t.direct.description}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <a href="mailto:danarraisa@gmail.com" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
-                <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
-                  <Mail className="w-5 h-5 text-primary" />
-                </div>
-                <span className="font-medium text-primary">Email</span>
-              </a>
-              <a href="https://wa.me/085747784405" target="_blank" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
-                <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
-                  <FaWhatsapp className="w-5 h-5 text-primary" />
-                </div>
-                <span className="font-medium text-primary">WhatsApp</span>
-              </a>
-              <a href="https://www.linkedin.com/in/danar-rais-alhakim/" target="_blank" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
-                <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
-                  <FiLinkedin className="w-5 h-5 text-primary" />
-                </div>
-                <span className="font-medium text-primary">LinkedIn</span>
-              </a>
-              <a href="https://github.com/yasrtcha" target="_blank" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
-                <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
-                  <FiGithub className="w-5 h-5 text-primary" />
-                </div>
-                <span className="font-medium text-primary">GitHub</span>
-              </a>
-            </div>
-          </motion.div>
-        </div>
+            </a>
+            <a href="https://github.com/yasrtcha" target="_blank" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
+              <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
+                <FiGithub className="w-5 h-5 text-primary" />
+              </div>
+            </a>
+            <a href="https://instagram.com/danarraisal" target="_blank" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
+              <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
+                <FiInstagram className="w-5 h-5 text-primary" />
+              </div>
+            </a>
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   );
