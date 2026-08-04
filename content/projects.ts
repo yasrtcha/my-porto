@@ -32,6 +32,7 @@ export type Project = {
   isPrivate: boolean;
   demoUrl?: string;
   githubUrl?: string;
+  figmaUrl?: string;
   heroImage: string;
   overview: TranslatableArray;
   problem: TranslatableString;
@@ -193,11 +194,10 @@ export const projects: Project[] = [
       'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785588018/kelola_user_lljyte.png',
       'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785588019/kelola_qna_cl0ogq.png',
       'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785588019/kelola_kutipan_rbzdtc.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785574380/login_mobile_yuxwvh.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785589690/dashboard_pengguna_mobile_y2moxf.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785589691/qna_mobile_nyn6ef.png',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785589691/kutipan_harian_mobile_ar9xam.png'
-
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785829147/loginmobile_uzfob8.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785829154/dasboard_pengguna_xl2afg.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785829156/kutipanmobile_jd3osc.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785829158/tanyamobile_qmfcln.png'
     ],
     challenges: [
       {
@@ -253,7 +253,7 @@ export const projects: Project[] = [
       }
     ],
     techStack: [
-      { category: 'Frontend', items: [{ name: 'Laravel', icon: 'laravel' }, { name: 'PHP', icon: 'php' }, { name: 'Tailwind CSS', icon: 'tailwindcss' }, { name: 'Arduino', icon: 'arduino' }, {name: 'MySQL', icon: 'mysql'}] }
+      { category: 'Frontend', items: [{ name: 'Laravel', icon: 'laravel' }, { name: 'PHP', icon: 'php' }, { name: 'Tailwind CSS', icon: 'tailwindcss' }, { name: 'Arduino', icon: 'arduino' }, { name: 'MySQL', icon: 'mysql' }, {name: 'ESP32', icon: 'esp32' }] }
     ],
     features: [
       {
@@ -267,7 +267,10 @@ export const projects: Project[] = [
       'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785648408/maket_2_lgk3o5.png',
       'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785648407/1_bskgjx.jpg',
       'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785648407/2_cwik5o.jpg',
-      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785648020/1_qxagxj.jpg'
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785648020/1_qxagxj.jpg',
+      'https://res.cloudinary.com/oyuxswwy/video/upload/f_auto,q_auto/v1785829643/vid1_mztdtz.mp4',
+      'https://res.cloudinary.com/oyuxswwy/video/upload/f_auto,q_auto/v1785861140/vid2_lookqn.mp4',
+      'https://res.cloudinary.com/oyuxswwy/video/upload/v1785862140/vid4_d72phq.mp4'
     ],
     challenges: [],
     results: {
@@ -277,44 +280,60 @@ export const projects: Project[] = [
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS']
   },
   {
-    slug: 'company-profile-revamp',
-    title: 'Company Profile Revamp',
+    slug: 'confest',
+    title: 'Confest KPI',
     shortDescription: {
-      ID: 'Redesign website profil perusahaan dengan fokus struktur informasi yang lebih jelas dan modern.',
-      EN: 'Company profile website redesign focusing on clearer and more modern information structure.'
+      ID: 'Website Landing Page untuk mempermudah penyebaran informasi mengenai pendaftaran & pelaksanaan Confest KPI 2025.',
+      EN: 'A landing page website to facilitate the dissemination of information regarding the registration and implementation of Confest KPI 2025.'
     },
-    category: 'UI/UX Design',
-    role: 'UI/UX Designer',
-    duration: { ID: '2 Minggu', EN: '2 Weeks' },
-    platform: 'Web',
+    category: 'Web Development',
+    role: 'Frontend Developer',
+    duration: { ID: '1 Minggu', EN: '1 Weeks' },
+    platform: 'Website',
     isPrivate: false,
-    heroImage: '/projects/comprof/hero.jpg',
+    githubUrl: 'https://github.com/yasrtcha/project-confest-2025',
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785761348/hero_r5e6aj.webp',
     overview: {
-      ID: ['Redesign website perusahaan untuk meningkatkan kredibilitas dan kemudahan navigasi.'],
-      EN: ['Company website redesign to improve credibility and navigation ease.']
+      ID: [
+        'CONFEST KPI 2025 merupakan website landing page yang dikembangkan untuk mendukung penyebaran informasi mengenai kegiatan CONFEST 2025 yang diselenggarakan oleh HIMA KPI Universitas Ibn Khaldun Bogor.',
+        'Website ini menjadi pusat informasi yang memuat tema acara, profil HIMA KPI, jadwal pelaksanaan, kategori perlombaan, alur pendaftaran, serta informasi penting lainnya sehingga peserta dapat memperoleh seluruh informasi dalam satu platform.'
+      ],
+      EN: [
+        'CONFEST KPI 2025 is a landing page website developed to support the dissemination of information about CONFEST 2025, organized by the Islamic Communication and Broadcasting Student Association (HIMA KPI) of Ibn Khaldun University Bogor.',
+        'The website serves as a centralized information hub containing the event theme, organization profile, event schedule, competition categories, registration process, and other essential information, allowing participants to access everything in one place.'
+      ]
     },
     problem: {
-      ID: 'Website lama terlihat outdated dan sulit dinavigasi di mobile.',
-      EN: 'The old website looked outdated and was difficult to navigate on mobile.'
+      ID: 'Sebelum website dikembangkan, informasi mengenai CONFEST 2025 masih tersebar di berbagai media sehingga peserta kesulitan memperoleh informasi yang lengkap, terpusat, dan mudah diakses.',
+      EN: 'Before the website was developed, information about CONFEST 2025 was scattered across multiple platforms, making it difficult for participants to access complete, centralized, and organized information.'
     },
     solution: {
-      ID: 'Penyegaran desain dengan pendekatan mobile-first dan tipografi modern.',
-      EN: 'Design refresh with a mobile-first approach and modern typography.'
+      ID: 'Website landing page dikembangkan sebagai pusat informasi resmi yang menyajikan seluruh informasi CONFEST 2025 secara terstruktur, responsif, dan mudah diakses oleh seluruh peserta.',
+      EN: 'A landing page website was developed as the official information hub to deliver all CONFEST 2025 information in a structured, responsive, and easily accessible platform for participants.'
     },
     rolesDetails: [
       {
-        title: { ID: 'UI/UX Designer', EN: 'UI/UX Designer' },
+        title: { ID: 'Frontend Developer', EN: 'Frontend Developer' },
         tasks: {
-          ID: ['Wireframing', 'Desain High Fidelity', 'Prototyping'],
-          EN: ['Wireframing', 'High Fidelity Design', 'Prototyping']
+          ID: ['Web Development', 'Responsive Layout', 'Interactive UI'],
+          EN: ['Web Development', 'Responsive Layout', 'Interactive UI']
         }
       }
     ],
     techStack: [
-      { category: 'Tools', items: [{ name: 'Figma', icon: 'figma' }] }
+      { category: 'Tools', items: [{ name: 'React', icon: 'react' }, { name: 'JavaScript', icon: 'javascript' }, { name: 'Tailwind CSS', icon: 'tailwindcss' }] }
     ],
     features: [],
-    gallery: [],
+    gallery: [
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785761881/timerr_neje9t.webp',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785761881/abouttheme_oz07px.webp',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785761881/aboutkpi_yxmkb1.webp',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785761881/yt_aae8tg.webp',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785761882/lomba_tpchcz.webp',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785761882/lomba1_tndzli.webp',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785761881/timeline_kolzcj.webp',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785761881/faq_tktflk.webp'
+    ],
     challenges: [],
     results: {
       ID: ['Modernisasi desain', 'Desain responsif mobile'],
@@ -323,49 +342,171 @@ export const projects: Project[] = [
     tags: ['UI Audit', 'Information Architecture']
   },
   {
-    slug: 'simple-booking-platform',
-    title: 'Simple Booking Platform',
+    slug: 'cms-website',
+    title: 'CMS Website',
     shortDescription: {
-      ID: 'Prototype sistem pemesanan layanan dengan alur booking cepat untuk validasi kebutuhan pengguna.',
-      EN: 'Service booking system prototype with a fast booking flow to validate user needs.'
+      ID: 'Sistem Content Management System (CMS) berbasis web yang dikembangkan selama program magang untuk memudahkan pengelolaan konten website.',
+      EN: 'A web-based Content Management System (CMS) developed during an internship to facilitate website content management.'
     },
-    category: 'Product Discovery',
-    role: 'Product Designer',
-    duration: { ID: '3 Minggu', EN: '3 Weeks' },
-    platform: 'Web / Mobile',
+    category: 'Web Development',
+    role: 'Frontend Developer & UI/UX Designer',
+    duration: { ID: '6 Bulan', EN: '6 Months' },
+    platform: 'Web Application',
     isPrivate: true,
-    heroImage: '/projects/booking/hero.jpg',
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785765643/login_qaddn7.webp',
     overview: {
-      ID: ['Eksplorasi alur pemesanan layanan yang efisien dengan meminimalkan jumlah langkah.'],
-      EN: ['Exploration of an efficient service booking flow by minimizing the number of steps.']
+      ID: [
+        'CMS Website merupakan proyek Project Based Learning (PBL) yang dikembangkan selama program magang sebagai solusi untuk membangun sistem Content Management System (CMS) internal bagi perusahaan.',
+        'Proyek ini bertujuan membantu administrator mengelola konten website melalui dashboard yang mudah digunakan tanpa bergantung pada layanan CMS pihak ketiga.'
+      ],
+      EN: [
+        'CMS Website is a Project Based Learning (PBL) project developed during an internship to build an internal Content Management System (CMS) for the company.',
+        'The project aims to help administrators manage website content through a user-friendly dashboard without relying on third-party CMS services.'
+      ]
     },
     problem: {
-      ID: 'Banyak sistem booking memerlukan proses registrasi yang panjang.',
-      EN: 'Many booking systems require a lengthy registration process.'
+      ID: 'Perusahaan belum memiliki sistem CMS internal dan masih bergantung pada layanan CMS pihak ketiga, sehingga diperlukan solusi yang dapat dikelola secara mandiri serta disesuaikan dengan kebutuhan perusahaan.',
+      EN: 'The company lacked an internal CMS and relied on third-party services, requiring a self-managed solution tailored to the company’s specific needs.'
     },
     solution: {
-      ID: 'Sistem guest booking dengan verifikasi satu langkah.',
-      EN: 'Guest booking system with one-step verification.'
+      ID: 'Dikembangkan CMS berbasis web sebagai solusi internal yang memungkinkan perusahaan mengelola konten website secara mandiri, lebih fleksibel, dan sesuai dengan kebutuhan bisnis tanpa bergantung pada layanan CMS pihak ketiga.',
+      EN: 'A web-based CMS was developed as an internal solution enabling the company to manage website content independently, with greater flexibility, and tailored to business needs without relying on third-party CMS services.'
     },
     rolesDetails: [
       {
-        title: { ID: 'Product Designer', EN: 'Product Designer' },
+        title: { ID: 'Frontend Developer', EN: 'Frontend Developer' },
         tasks: {
-          ID: ['Riset Pengguna', 'Pemetaan User Journey', 'Prototyping'],
-          EN: ['User Research', 'User Journey Mapping', 'Prototyping']
+          ID: ['Desain Organization Page', 'Desain Personal Page', 'Desain Builder User Page'],
+          EN: ['Organization Page Design', 'Personal Page Design', 'User Builder Page Design']
+        }
+      },
+      {
+        title: { ID: 'UI/UX Designer', EN: 'UI/UX Designer' },
+        tasks: {
+          ID: ['Desain Builder User Page', 'Content Management Page', 'API Integration Page', 'Workflow Approval Page', 'Media Assets Page'],
+          EN: ['User Builder Page Design', 'Content Management Page', 'API Integration Page', 'Workflow Approval Page', 'Media Assets Page']
         }
       }
     ],
     techStack: [
-      { category: 'Tools', items: [{ name: 'Figma', icon: 'figma' }, { name: 'Miro', icon: 'miro' }] }
+      { category: 'Tools', items: [{ name: 'Figma', icon: 'figma' }, { name: 'Next JS', icon: 'nextjs' }, { name: 'Prisma', icon: 'prisma' }, { name: 'TypeScript', icon: 'typescript' }, { name: 'Tailwind CSS', icon: 'tailwindcss' }] }
     ],
     features: [],
-    gallery: [],
+    gallery: [
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785768160/Desktop_-_1_ovtqfa.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785768285/Desktop_-_4_qs4tk2.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785768286/Desktop_-_5_nhgptp.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785768288/Desktop_-_9_i3ttql.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785768288/Desktop_-_8_cgpy6q.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785768287/Desktop_-_7_bt10na.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785768287/Desktop_-_6_vppjnw.png'
+    ],
     challenges: [],
     results: {
       ID: ['Konversi pemesanan lebih cepat'],
       EN: ['Faster booking conversion']
     },
     tags: ['Product Discovery', 'Wireframing']
+  },
+  {
+    slug: 'rais-portfolio',
+    title: 'Website Portfolio Rais',
+    shortDescription: {
+      ID: 'Portofolio website nya Danar Raisc Alhakim ',
+      EN: 'Portfolio website of Danar Raisc Alhakim'
+    },
+    category: 'Web Development',
+    role: 'Frontend Developer',
+    duration: { ID: '2 Minggu', EN: '2 Weeks' },
+    platform: 'Website',
+    isPrivate: false,
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785769347/hero0_wlz61y.png',
+    overview: {
+      ID: ['Website portfolio ini dibuat sebagai media untuk menampilkan profil, project, pengalaman, dan skill yang saya miliki sebagai lulusan Teknologi Informasi Universitas Brawijaya. Website dirancang dengan konsep modern dan minimalis agar informasi dapat tersampaikan dengan jelas dan profesional.'],
+      EN: ['This portfolio website was created as a medium to display my profile, projects, experiences, and skills as a graduate of Information Technology at Universitas Brawijaya. The website is designed with a modern and minimalist concept to ensure information is conveyed clearly and professionally.']
+    },
+    problem: {
+      ID: 'Sebagai fresh graduate, diperlukan platform yang dapat menampilkan hasil project dan kemampuan teknis secara terstruktur agar mudah dipahami oleh recruiter maupun client.',
+      EN: 'As a fresh graduate, a platform is needed to display project outcomes and technical skills in a structured manner to be easily understood by recruiters and clients.'
+    },
+    solution: {
+      ID: 'Membangun website portfolio dengan tampilan responsif yang mengorganisir project, sertifikat, tech stack, dan informasi kontak dalam satu platform untuk memperkuat personal branding.',
+      EN: 'Built a responsive portfolio website that organizes projects, certificates, tech stack, and contact information in one platform to strengthen personal branding.'
+    },
+    rolesDetails: [],
+    techStack: [
+      { category: 'Frontend', items: [{ name: 'Next JS', icon: 'nextjs' }, { name: 'TypeScript', icon: 'typescript' }, { name: 'Tailwind CSS', icon: 'tailwindcss' }, { name: 'Cloudinary', icon: 'cloudinary' }] }
+    ],
+    features: [],
+    gallery: [],
+    challenges: [],
+    results: {
+      ID: [''],
+      EN: ['']
+    },
+    tags: []
+  },
+  {
+    slug: 'feel-play',
+    title: 'Feel Play',
+    shortDescription: {
+      ID: 'FeelPlay adalah aplikasi musik berbasis mood yang memberikan rekomendasi lagu berdasarkan emosi dan suasana hati pengguna.',
+      EN: 'FeelPlay is a mood-based music application that recommends songs based on users\' emotions and current moods.'
+    },
+    category: 'UI/UX Design',
+    role: 'UI/UX Designer',
+    duration: { ID: '1 Minggu', EN: '1 Week' },
+    platform: 'Mobile App',
+    isPrivate: false,
+    figmaUrl: 'https://www.figma.com/design/dkL5swvFYxtmnOdF7cjFaz/FeelPlay?node-id=0-1&t=XvRNb9evCBqGrzvO-1',
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785770887/hero_qbpdk7.png',
+    overview: {
+      ID: [
+        'FeelPlay merupakan project desain UI/UX untuk aplikasi musik yang berfokus pada rekomendasi lagu berdasarkan mood pengguna.',
+        'Desain dibuat untuk memberikan pengalaman yang mudah digunakan dalam menemukan musik yang sesuai dengan kondisi emosional pengguna.'
+      ],
+      EN: [
+        'FeelPlay is a UI/UX design project for a music application focused on recommending songs based on user mood.',
+        'The design was created to provide an easy-to-use experience in discovering music that matches the user\'s emotional state.'
+      ]
+    },
+    problem: {
+      ID: 'Pengguna sering mengalami kesulitan dalam menemukan lagu yang sesuai dengan suasana hati mereka. Platform musik yang ada umumnya masih berfokus pada genre, artis, atau riwayat mendengarkan.',
+      EN: 'Users often struggle to find songs that match their mood. Existing music platforms generally still focus on genre, artist, or listening history.'
+    },
+    solution: {
+      ID: 'Merancang aplikasi musik dengan fitur rekomendasi berbasis mood yang memungkinkan pengguna memilih suasana hati dan mendapatkan rekomendasi lagu yang sesuai.',
+      EN: 'Designing a music application with mood-based recommendation features that allow users to select their mood and receive appropriate song recommendations.'
+    },
+    rolesDetails: [],
+    techStack: [
+      { category: 'Mobile', items: [{ name: 'Figma', icon: 'figma' }] }
+    ],
+    features: [],
+    gallery: [
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785771806/Apple_iPhone_11_Pro_Silver_xvtzcg.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827652/signup2_dtub1j.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785825640/sign_inn_usobpq.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827664/signin2_yyr0tq.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827744/search_zogy20.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827777/setting_kbkkvc.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827744/search_zogy20.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827824/search_2_jelyox.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827826/search_3_pgsukp.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827858/search_lagu_pqqqww.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827888/mood_j3ejhg.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827908/moodplaylist_vvxsq0.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827911/mood_playlist_2_g1emmm.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827913/moodplaysong_ggvdxi.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827991/myplaylist_hijdor.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827993/myplaylist2_jlpkt9.png',
+      'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785827995/playlistsongplay_cyuz5h.png'
+    ],
+    challenges: [],
+    results: {
+      ID: ['Menghasilkan desain UI/UX aplikasi musik berbasis mood', 'Membuat pengalaman menemukan lagu lebih personal dan intuitif', 'Menghasilkan prototype sebagai acuan pengembangan aplikasi'],
+      EN: ['Generated mood-based music application UI/UX design', 'Created a more personal and intuitive song discovery experience', 'Produced a prototype as a reference for application development']
+    },
+    tags: ['UI/UX Design', 'Mobile App']
   }
 ];

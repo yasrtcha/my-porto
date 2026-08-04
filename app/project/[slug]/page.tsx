@@ -1,13 +1,13 @@
 "use client";
 import { use, useEffect, useRef, useState } from "react";
 import { notFound } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, Lock } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Lock, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
+import { SiFigma } from "react-icons/si";
 import { projects } from "@/content/projects";
 import Navbar from "@/app/components/navbar";
-import Footer from "@/app/components/Footer";
 import TechStackIcon from "@/app/components/TechStackIcon";
 import { useLanguage } from '../../context/LanguageContext';
 import { dictionary } from '@/content/dictionary';
@@ -23,8 +23,8 @@ const fadeUp = {
 export default function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params);
   const project = projects.find((p) => p.slug === resolvedParams.slug);
-  const [activeImage, setActiveImage] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedPopupImage, setSelectedPopupImage] = useState<string | null>(null);
   const { lang } = useLanguage();
 
   const { t, sections } = (() => {
@@ -69,11 +69,29 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
     notFound();
   }
 
+  const isGalleryImage = selectedPopupImage && project.gallery.includes(selectedPopupImage);
+  const currentGalleryIndex = isGalleryImage ? project.gallery.indexOf(selectedPopupImage as string) : -1;
+  const totalGalleryImages = project.gallery.length;
+
+  const handlePrevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (currentGalleryIndex > 0) {
+      setSelectedPopupImage(project.gallery[currentGalleryIndex - 1]);
+    }
+  };
+
+  const handleNextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (currentGalleryIndex !== -1 && currentGalleryIndex < totalGalleryImages - 1) {
+      setSelectedPopupImage(project.gallery[currentGalleryIndex + 1]);
+    }
+  };
+
   return (
     <>
       <Navbar />
 
-      <main className="min-h-screen pt-[120px] pb-[72px] px-5 md:px-8 max-w-[1280px] mx-auto">
+      <main className="min-h-screen pt-[96px] pb-[72px] px-5 md:px-8 max-w-[1280px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,400px)_1fr] gap-x-16 gap-y-12">
           {/* ================= LEFT: sticky identity panel ================= */}
           <motion.aside
@@ -140,6 +158,15 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                     <FiGithub className="w-4 h-4" /> {t.github}
                   </Link>
                 )}
+                {project.figmaUrl && (
+                  <Link
+                    href={project.figmaUrl}
+                    target="_blank"
+                    className="px-5 py-2.5 bg-surface border border-border text-primary rounded-[14px] text-sm font-medium hover:bg-background transition-all flex items-center gap-2"
+                  >
+                    <SiFigma className="w-4 h-4" /> Figma
+                  </Link>
+                )}
                 {project.isPrivate && (
                   <div className="px-4 py-2 bg-surface border border-border text-secondary rounded-[14px] text-sm font-medium flex items-center gap-2 cursor-not-allowed">
                     <Lock className="w-4 h-4" /> {t.privateRepo}
@@ -161,7 +188,11 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
           {/* ================= RIGHT: flowing narrative ================= */}
           <div className="flex flex-col">
             {/* Hero image opens the right column instead of sitting beside the title */}
-            <motion.div {...fadeUp} className="relative w-full bg-surface rounded-[24px] border border-border overflow-hidden mb-16">
+            <motion.div
+              {...fadeUp}
+              className="relative w-full bg-surface rounded-[24px] border border-border overflow-hidden mb-16 cursor-pointer hover:opacity-90 transition-opacity"
+              onClick={() => project.heroImage && setSelectedPopupImage(project.heroImage)}
+            >
               {project.heroImage ? (
                 <CldImage
                   src={project.heroImage}
@@ -267,60 +298,39 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                   <span className="font-mono text-sm text-muted">04</span>
                   <h2 className="text-[28px] md:text-[34px] font-semibold text-primary">{t.gallery}</h2>
                 </div>
-                
-                {/* 1. Tambahkan aspect-[16/10] di sini agar kotaknya tetap seukuran layar web */}
-                <div className="relative w-full aspect-video bg-surface rounded-[24px] border border-border overflow-hidden">
-                  <motion.div
-                    key={activeImage}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                    className="w-full h-full relative flex items-center justify-center"
-                  >
-                    {project.gallery[activeImage] ? (
-                      <img
-                        src={project.gallery[activeImage]}
-                        alt={`Gallery ${activeImage + 1}`}
-                        className={
-                          project.gallery[activeImage].toLowerCase().includes("mobile")
-                            ? "w-full h-full object-contain drop-shadow-md p-6 md:p-10 bg-primary/5" // Tampilan Mobile (Diberi padding & sedikit background beda agar terlihat seperti frame)
-                            : "w-full h-full object-contain scale-[1.03]" // Tampilan Web (Lebar penuh, 100% utuh tidak terpotong)
-                        }
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center text-muted font-mono">
-                        [Gallery Image {activeImage + 1}: {project.gallery[activeImage]}]
-                      </div>
-                    )}
-                  </motion.div>
-                </div>
 
-                {project.gallery.length > 1 && (
-                  <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
-                    {project.gallery.map((img, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setActiveImage(i)}
-                        className={`relative w-full aspect-video rounded-[12px] overflow-hidden border-2 transition-all ${
-                          activeImage === i ? "border-primary" : "border-transparent opacity-60 hover:opacity-100"
-                        }`}
-                      >
-                        {img ? (
-                          <img
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
+                  {project.gallery.map((img, i) => (
+                    <div
+                      key={i}
+                      onClick={() => img && setSelectedPopupImage(img)}
+                      className="relative rounded-[24px] overflow-hidden cursor-pointer hover:opacity-95 hover:scale-[0.98] transition-all duration-300 border border-border break-inside-avoid mb-6"
+                    >
+                      {img ? (
+                        img.includes('/video/') || img.endsWith('.mp4') ? (
+                          <video
                             src={img}
-                            alt={`Gallery thumbnail ${i + 1}`}
-                            // Opsional: Untuk thumbnail, biarkan object-cover tapi arahkan fokus ke atas (object-top)
-                            className="w-full h-full object-cover object-top"
+                            className="w-full h-auto object-cover rounded-[16px]"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
                           />
                         ) : (
-                          <div className="absolute inset-0 bg-surface flex items-center justify-center text-[10px] text-muted font-mono break-all p-2 text-center">
-                            {img}
-                          </div>
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                )}
+                          <img
+                            src={img}
+                            alt={`Gallery image ${i + 1}`}
+                            className="w-full h-auto object-cover rounded-[16px]"
+                          />
+                        )
+                      ) : (
+                        <div className="w-full h-[200px] flex items-center justify-center bg-surface text-[10px] text-muted font-mono break-all p-2 text-center">
+                          {img}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </motion.section>
             )}
 
@@ -373,7 +383,85 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
         </div>
       </main>
 
-      <Footer />
+      <AnimatePresence>
+        {selectedPopupImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedPopupImage(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-12 bg-black/80 backdrop-blur-sm"
+          >
+            {/* Close Button */}
+            <button
+              onClick={(e) => { e.stopPropagation(); setSelectedPopupImage(null); }}
+              className="absolute top-4 right-4 md:top-8 md:right-8 p-2 text-white/70 hover:text-white transition-colors z-50"
+            >
+              <X className="w-8 h-8 md:w-10 md:h-10" />
+            </button>
+
+            {/* Image Counter */}
+            {currentGalleryIndex !== -1 && (
+              <div className="absolute top-4 md:top-8 left-1/2 -translate-x-1/2 p-2 text-white/90 font-medium tracking-widest text-sm md:text-base z-50">
+                {currentGalleryIndex + 1} / {totalGalleryImages}
+              </div>
+            )}
+
+            {/* Prev Button */}
+            {currentGalleryIndex > 0 && (
+              <button
+                onClick={handlePrevImage}
+                className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-all hover:-translate-x-1 z-50"
+              >
+                <ChevronLeft className="w-8 h-8 md:w-12 md:h-12 drop-shadow-md" />
+              </button>
+            )}
+
+            {/* Next Button */}
+            {currentGalleryIndex !== -1 && currentGalleryIndex < totalGalleryImages - 1 && (
+              <button
+                onClick={handleNextImage}
+                className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-all hover:translate-x-1 z-50"
+              >
+                <ChevronRight className="w-8 h-8 md:w-12 md:h-12 drop-shadow-md" />
+              </button>
+            )}
+
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-5xl aspect-video max-h-[90vh]"
+            >
+              <div className="relative w-full h-full flex items-center justify-center">
+                {selectedPopupImage.includes('/video/') || selectedPopupImage.endsWith('.mp4') ? (
+                  <video
+                    src={selectedPopupImage}
+                    className="w-full h-full object-contain"
+                    controls
+                    autoPlay
+                  />
+                ) : selectedPopupImage.includes('/') || selectedPopupImage.includes('http') ? (
+                  <img
+                    src={selectedPopupImage}
+                    alt="Full View"
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  <CldImage
+                    src={selectedPopupImage}
+                    alt="Full View"
+                    width={1920}
+                    height={1080}
+                    className="w-full h-full object-contain"
+                  />
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

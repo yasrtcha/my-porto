@@ -18,6 +18,11 @@ const iconMap: Record<string, any> = {
   'supabase': Icons.siSupabase,
   'php':Icons.siPhp,
   'arduino':Icons.siArduino,
+  'nextjs':Icons.siNextdotjs,
+  'prisma':Icons.siPrisma,
+  'cloudinary':Icons.siCloudinary,
+  'esp32':Icons.siEspressif,
+  'javascript':Icons.siJavascript
 };
 
 interface TechStackIconProps {
