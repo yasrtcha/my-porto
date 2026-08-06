@@ -26,20 +26,33 @@ export default function Navbar() {
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
+	useEffect(() => {
+		if (isMobileMenuOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+		return () => {
+			document.body.style.overflow = '';
+		};
+	}, [isMobileMenuOpen]);
+
 	const t = dictionary[lang].nav;
 
 	const navLinks = [
-		{ name: t.about, href: '/#about' },
+		{ name: t.about, href: '/about' },
 		{ name: t.projects, href: '/project' },
-		{ name: t.certificates, href: '/#certificates' },
 		{ name: t.contact, href: '/#contact' },
 	];
 
 	return (
 		<nav
-			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b border-transparent ${scrolled
+			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b ${
+				isMobileMenuOpen 
+					? 'bg-background border-border'
+					: scrolled
 					? 'bg-background/70 backdrop-blur-[18px] border-border'
-					: 'bg-transparent backdrop-blur-none'
+					: 'bg-transparent backdrop-blur-none border-transparent'
 				}`}
 		>
 			<div className="max-w-[1280px] mx-auto px-5 md:px-8 h-[72px] md:h-[80px] flex justify-between items-center">
@@ -119,7 +132,7 @@ export default function Navbar() {
 						<Link
 							href="/cv.pdf"
 							target="_blank"
-							className="px-5 py-2.5 bg-accent text-background rounded-[14px] font-medium text-sm hover:-translate-y-0.5 hover:shadow-hover transition-all flex items-center gap-2"
+							className="px-5 py-2.5 bg-primary text-background rounded-[14px] font-medium text-sm hover:-translate-y-0.5 hover:shadow-hover transition-all flex items-center gap-2"
 						>
 							{t.downloadCv}
 						</Link>
@@ -128,7 +141,7 @@ export default function Navbar() {
 
 				{/* Mobile Toggle */}
 				<button
-					className="md:hidden z-50 text-primary p-2"
+					className="md:hidden flex items-center justify-center relative z-[60] text-primary p-2"
 					onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 				>
 					{isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -158,7 +171,7 @@ export default function Navbar() {
 							))}
 						</div>
 
-						<div className="mt-auto mb-10 flex flex-col gap-6">
+						<div className="mt-12 pb-10 flex flex-col gap-6 overflow-y-auto">
 							<div className="flex items-center justify-between">
 								<span className="font-medium text-secondary">Language</span>
 								<div className="flex items-center bg-surface p-1 rounded-full text-sm font-semibold">
@@ -192,7 +205,7 @@ export default function Navbar() {
 							<Link
 								href="/cv.pdf"
 								onClick={() => setIsMobileMenuOpen(false)}
-								className="w-full py-4 bg-accent text-background rounded-xl font-medium text-center mt-4"
+								className="w-full py-4 bg-primary text-background rounded-xl font-medium text-center mt-4"
 							>
 								{t.downloadCv}
 							</Link>

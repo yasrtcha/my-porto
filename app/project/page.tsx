@@ -5,10 +5,10 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/content/projects";
 import Navbar from "@/app/components/navbar";
-import Footer from "@/app/components/Footer";
 import TechStackIcon from "@/app/components/TechStackIcon";
 import { useLanguage } from '../context/LanguageContext';
 import { dictionary } from '@/content/dictionary';
+import Footer from "@/app/components/Footer";
 
 const staggerVariants = {
   animate: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
@@ -26,15 +26,20 @@ export default function ProjectList() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-[120px] pb-[72px] px-5 md:px-8 max-w-[1280px] mx-auto">
+      <main className="min-h-screen pt-[96px] pb-[72px] px-5 md:px-8 max-w-[1280px] mx-auto">
         <motion.div variants={staggerVariants} initial="initial" animate="animate" className="flex flex-col gap-16">
-          <motion.div variants={itemVariants} className="flex flex-col gap-4 max-w-[640px]">
-            <h1 className="text-[40px] md:text-[56px] font-semibold leading-tight tracking-tight text-primary">
-              {t.allProjects}
-            </h1>
-            <p className="text-lg text-secondary">
-              {t.allDesc}
-            </p>
+          <motion.div variants={itemVariants} className="flex flex-col gap-6">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">
+              {t.tag}
+            </span>
+            <div className="flex flex-col gap-4 max-w-[640px]">
+              <h1 className="text-[32px] md:text-[48px] font-semibold leading-tight tracking-tight text-primary">
+                {t.allProjects}
+              </h1>
+              <p className="text-lg text-secondary">
+                {t.allDesc}
+              </p>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -65,11 +70,11 @@ export default function ProjectList() {
                       {project.title}
                     </h3>
 
-                    <p className="text-secondary mb-6 flex-1 line-clamp-2">
+                    <p className="text-secondary mb-6 line-clamp-2">
                       {project.shortDescription[lang]}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-divider">
+                    <div className="flex flex-wrap gap-2 pt-6 border-t border-divider">
                       {project.techStack.flatMap(stack => stack.items).map((item, idx) => (
                         <TechStackIcon key={idx} name={item.name} icon={item.icon} />
                       ))}

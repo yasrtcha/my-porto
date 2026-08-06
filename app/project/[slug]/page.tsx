@@ -37,7 +37,6 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
         { id: "problem-solution", num: "02", label: `${t.problem} & ${t.solution}` },
         { id: "approach", num: "03", label: t.myRole },
         { id: "gallery", num: "04", label: t.gallery },
-        { id: "outcome", num: "05", label: t.results },
       ],
     };
   })();
@@ -334,51 +333,6 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
               </motion.section>
             )}
 
-            {/* ---- 05 Outcome: challenges + results ---- */}
-            <motion.section
-              {...fadeUp}
-              id="outcome"
-              ref={(el) => { sectionRefs.current["outcome"] = el; }}
-              className="flex flex-col gap-10 py-14 scroll-mt-32"
-            >
-              <div className="flex items-baseline gap-4">
-                <span className="font-mono text-sm text-muted">05</span>
-                <h2 className="text-[28px] md:text-[34px] font-semibold text-primary">{t.results}</h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                {project.challenges.length > 0 && (
-                  <div className="flex flex-col gap-6">
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted">{t.challenges}</span>
-                    <div className="flex flex-col divide-y divide-divider border-t border-divider">
-                      {project.challenges.map((c, i) => (
-                        <div key={i} className="flex gap-4 py-5">
-                          <span className="text-secondary font-mono text-sm mt-1">0{i + 1}</span>
-                          <div className="flex flex-col gap-2">
-                            <h4 className="font-medium text-primary">{c.challenge[lang]}</h4>
-                            <p className="text-secondary leading-relaxed">{c.solution[lang]}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {project.results[lang].length > 0 && (
-                  <div className="flex flex-col gap-6">
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted">{t.results}</span>
-                    <div className="flex flex-col divide-y divide-divider border-t border-divider">
-                      {project.results[lang].map((r, i) => (
-                        <div key={i} className="flex items-center gap-3 py-4">
-                          <CheckCircle2 className="w-5 h-5 text-success flex-shrink-0" />
-                          <span className="font-medium text-primary">{r}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </motion.section>
           </div>
         </div>
       </main>
