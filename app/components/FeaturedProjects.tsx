@@ -73,11 +73,11 @@ export default function FeaturedProjects() {
                     {project.title}
                   </h3>
 
-                  <p className="text-secondary mb-6 flex-1 line-clamp-2">
+                  <p className="text-secondary mb-6 line-clamp-2">
                     {project.shortDescription[lang]}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-divider">
+                  <div className="flex flex-wrap gap-2 pt-6 border-t border-divider">
                     {project.techStack.flatMap(stack => stack.items).slice(0, 3).map((item, idx) => (
                       <TechStackIcon key={idx} name={item.name} icon={item.icon} />
                     ))}

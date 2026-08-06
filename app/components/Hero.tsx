@@ -20,19 +20,19 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 24 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }
   },
 };
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 0.96 },
-  visible: { 
-    opacity: 1, 
-    scale: 1, 
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const, delay: 0.3 } 
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const, delay: 0.3 }
   },
 };
 
@@ -41,14 +41,14 @@ export default function Hero() {
   const t = dictionary[lang].hero;
 
   return (
-    <section className="relative flex items-center pt-32 pb-8 md:pt-40 md:pb-8 overflow-hidden">
+    <section className="relative flex items-center pt-24 pb-8 md:pt-32 md:pb-8 overflow-hidden">
       {/* Subtle Radial Gradient Background */}
       <div className="absolute inset-0 pointer-events-none flex justify-center items-center">
         <div className="w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] opacity-50 dark:opacity-20" />
       </div>
 
       <div className="max-w-[1280px] w-full mx-auto px-5 md:px-8 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center">
-        <motion.div 
+        <motion.div
           className="flex flex-col items-start"
           variants={containerVariants}
           initial="hidden"
@@ -57,7 +57,7 @@ export default function Hero() {
           <motion.p variants={itemVariants} className="text-secondary font-medium mb-4">
             {t.greeting}
           </motion.p>
-          
+
           <motion.h1 variants={itemVariants} className="text-[40px] md:text-[56px] font-semibold leading-[1.1] tracking-tight mb-6 text-primary">
             {t.roles[0]}<br />
             {t.roles[1]}<br />
@@ -69,16 +69,16 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 mb-12">
-            <Link 
+            <Link
               href="/project"
-              className="px-7 py-4 bg-accent text-background rounded-[14px] font-medium hover:-translate-y-0.5 hover:shadow-hover transition-all flex items-center gap-2"
+              className="px-7 py-4 bg-primary text-background rounded-[14px] font-medium hover:-translate-y-0.5 hover:shadow-hover transition-all flex items-center gap-2"
             >
               {t.viewProjects}
             </Link>
-            <Link 
+            <Link
               href="/cv.pdf"
               target="_blank"
-              className="px-7 py-4 bg-transparent border border-border text-primary rounded-[14px] font-medium hover:bg-surface transition-colors"
+              className="px-7 py-4 bg-transparent border border-primary text-primary rounded-[14px] font-medium hover:bg-surface transition-colors"
             >
               {t.downloadCv}
             </Link>
@@ -101,7 +101,7 @@ export default function Hero() {
         </motion.div>
 
         <div className="flex justify-center md:justify-end">
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={imageVariants}

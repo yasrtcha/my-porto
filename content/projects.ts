@@ -90,8 +90,8 @@ export const projects: Project[] = [
       {
         title: { ID: 'UI/UX Designer', EN: 'UI/UX Designer' },
         tasks: {
-          ID: ['Wireframing', 'Prototyping'],
-          EN: ['Wireframing', 'Prototyping']
+          ID: ['Wireframing'],
+          EN: ['Wireframing']
         }
       }
     ],
@@ -412,8 +412,8 @@ export const projects: Project[] = [
     slug: 'rais-portfolio',
     title: 'Website Portfolio Rais',
     shortDescription: {
-      ID: 'Portofolio website nya Danar Raisc Alhakim ',
-      EN: 'Portfolio website of Danar Raisc Alhakim'
+      ID: 'Portofolio website nya Danar Rais Alhakim ',
+      EN: 'Portfolio website of Danar Rais Alhakim'
     },
     category: 'Web Development',
     role: 'Frontend Developer',
@@ -433,7 +433,15 @@ export const projects: Project[] = [
       ID: 'Membangun website portfolio dengan tampilan responsif yang mengorganisir project, sertifikat, tech stack, dan informasi kontak dalam satu platform untuk memperkuat personal branding.',
       EN: 'Built a responsive portfolio website that organizes projects, certificates, tech stack, and contact information in one platform to strengthen personal branding.'
     },
-    rolesDetails: [],
+    rolesDetails: [
+      {
+        title: { ID: 'Frontend Developer', EN: 'Frontend Developer' },
+        tasks: {
+          ID: ['Web Development', 'Responsive Layout', 'Interactive UI'],
+          EN: ['Web Development', 'Responsive Layout', 'Interactive UI']
+        }
+      }
+    ],
     techStack: [
       { category: 'Frontend', items: [{ name: 'Next JS', icon: 'nextjs' }, { name: 'TypeScript', icon: 'typescript' }, { name: 'Tailwind CSS', icon: 'tailwindcss' }, { name: 'Cloudinary', icon: 'cloudinary' }] }
     ],

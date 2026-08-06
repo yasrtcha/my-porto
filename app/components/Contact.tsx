@@ -29,7 +29,7 @@ export default function Contact() {
         variants={{
           visible: { transition: { staggerChildren: 0.1 } }
         }}
-        className="flex flex-col gap-16 md:gap-20"
+        className="flex flex-col gap-12 md:gap-16"
       >
         <motion.div variants={revealVariants} className="flex flex-col gap-6 max-w-[640px] mx-auto text-center items-center">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">
@@ -38,36 +38,39 @@ export default function Contact() {
           <h2 className="text-[32px] md:text-[56px] font-semibold leading-tight tracking-tight text-primary">
             {t.heading}
           </h2>
+        </motion.div>
+
+        <motion.div variants={revealVariants} className="max-w-[640px] mx-auto text-center">
           <p className="text-lg text-secondary">
             {t.description}
           </p>
         </motion.div>
 
         <motion.div variants={revealVariants} className="flex flex-col gap-10 max-w-[1024px] mx-auto w-full">
-          <div className="flex items-center justify-center gap-4">
-            <a href="mailto:danarraisa@gmail.com" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
-              <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
-                <Mail className="w-5 h-5 text-primary" />
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <a href="mailto:danarraisa@gmail.com" className="flex items-center hover:scale-[1.1] transition-transform group">
+              <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
+                <Mail className="w-6 h-6 text-primary" />
               </div>
             </a>
-            <a href="https://wa.me/085747784405" target="_blank" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
-              <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
-                <FaWhatsapp className="w-5 h-5 text-primary" />
+            <a href="https://wa.me/085747784405" target="_blank" className="flex items-center hover:scale-[1.1] transition-transform group">
+              <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
+                <FaWhatsapp className="w-6 h-6 text-primary" />
               </div>
             </a>
-            <a href="https://www.linkedin.com/in/danar-rais-alhakim/" target="_blank" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
-              <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
-                <FiLinkedin className="w-5 h-5 text-primary" />
+            <a href="https://www.linkedin.com/in/danar-rais-alhakim/" target="_blank" className="flex items-center hover:scale-[1.1] transition-transform group">
+              <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
+                <FiLinkedin className="w-6 h-6 text-primary" />
               </div>
             </a>
-            <a href="https://github.com/yasrtcha" target="_blank" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
-              <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
-                <FiGithub className="w-5 h-5 text-primary" />
+            <a href="https://github.com/yasrtcha" target="_blank" className="flex items-center hover:scale-[1.1] transition-transform group">
+              <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
+                <FiGithub className="w-6 h-6 text-primary" />
               </div>
             </a>
-            <a href="https://instagram.com/danarraisal" target="_blank" className="flex items-center gap-4 p-4 rounded-[16px] border border-border hover:bg-surface hover:scale-[1.02] transition-all group">
-              <div className="p-3 bg-surface group-hover:bg-background rounded-full transition-colors">
-                <FiInstagram className="w-5 h-5 text-primary" />
+            <a href="https://instagram.com/danarraisal" target="_blank" className="flex items-center hover:scale-[1.1] transition-transform group">
+              <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
+                <FiInstagram className="w-6 h-6 text-primary" />
               </div>
             </a>
           </div>

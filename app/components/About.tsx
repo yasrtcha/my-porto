@@ -3,6 +3,11 @@
 import { motion } from "framer-motion";
 import { useLanguage } from '../context/LanguageContext';
 import { dictionary } from '@/content/dictionary';
+import LogoLoop from './LogoLoop';
+import Certificates from './Certificates';
+import PixelTransition from './PixelTransition';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiLaravel, SiFigma, SiPhp, SiMysql, SiFlutter, SiGithub, SiLaragon, SiJavascript } from 'react-icons/si';
+import { VscVscode } from 'react-icons/vsc';
 
 const revealVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -13,12 +18,38 @@ const revealVariants = {
   },
 };
 
+const techLogosRow1 = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { node: <SiLaravel />, title: "Laravel", href: "https://laravel.com"},
+  { node: <SiPhp />, title: "PHP", href: "https://www.php.net"},
+  { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com"},
+  { node: <SiFlutter />, title: "Flutter", href: "https://flutter.dev"},
+  { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
+];
+
+const techLogosRow2 = [
+  { node: <SiFigma />, title: "Figma", href: "https://www.figma.com" },
+  { node: <VscVscode />, title: "VS Code", href: "https://code.visualstudio.com" },
+  { node: <SiGithub />, title: "GitHub", href: "https://github.com" },
+  { node: <SiLaragon />, title: "Laragon", href: "https://laragon.net" }
+];
+
+// Alternative with image sources
+const imageLogos = [
+  { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
+  { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
+  { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
+];
+
 export default function About() {
   const { lang } = useLanguage();
   const t = dictionary[lang].about;
 
   return (
-    <section id="about" className="pt-8 pb-8 md:pt-10 md:pb-8 px-5 md:px-8 max-w-[1280px] mx-auto">
+    <section id="about" className="px-5 md:px-8 max-w-[1280px] mx-auto">
       <motion.div 
         initial="hidden"
         whileInView="visible"
@@ -46,24 +77,73 @@ export default function About() {
             </div>
           </motion.div>
 
-          <motion.div variants={revealVariants} className="grid grid-cols-2 gap-8 md:gap-12 content-center">
-            <div className="flex flex-col gap-2">
-              <span className="text-4xl md:text-5xl font-semibold text-primary">15+</span>
-              <span className="text-sm font-medium text-secondary">{t.stats.projects}</span>
-            </div>
-            <div className="flex flex-col gap-2">
-              <span className="text-4xl md:text-5xl font-semibold text-primary">4+</span>
-              <span className="text-sm font-medium text-secondary">{t.stats.years}</span>
-            </div>
-            <div className="flex flex-col gap-2">
-              <span className="text-4xl md:text-5xl font-semibold text-primary">20+</span>
-              <span className="text-sm font-medium text-secondary">{t.stats.tech}</span>
-            </div>
-            <div className="flex flex-col gap-2">
-              <span className="text-4xl md:text-5xl font-semibold text-primary">12+</span>
-              <span className="text-sm font-medium text-secondary">{t.stats.cert}</span>
+          <motion.div variants={revealVariants} className="flex justify-center items-center h-full">
+            <div className="relative w-full max-w-[320px] md:max-w-[400px]">
+              <PixelTransition
+                firstContent={
+                  <img
+                    src="/formal-batik.webp"
+                    alt="Batik Formal"
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                }
+                secondContent={
+                  <img
+                    src="https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785603107/cat_it_pkkqqk.jpg"
+                    alt="default pixel transition content, a cat!"
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                }
+                gridSize={8}
+                pixelColor="#ffffff"
+                once={false}
+                animationStepDuration={0.4}
+                aspectRatio="125%"
+                className="rounded-[20px] overflow-hidden"
+                style={{
+                  width: "100%",
+                  maxWidth: "none",
+                  backgroundColor: "transparent",
+                  borderWidth: 0,
+                  borderColor: "transparent",
+                  boxShadow: "none",
+                }}
+              />
             </div>
           </motion.div>
+        </div>
+
+        <Certificates />
+
+        <div className="flex flex-col gap-6 md:gap-8 mt-10 md:mt-14">
+          <div className="relative overflow-hidden h-[80px] md:h-[120px]">
+            <LogoLoop
+              logos={techLogosRow1}
+              speed={100}
+              direction="left"
+              logoHeight="clamp(40px, 8vw, 75px)"
+              gap="clamp(30px, 6vw, 60px)"
+              hoverSpeed={0}
+              scaleOnHover
+              fadeOut
+              fadeOutColor="#ffffff"
+              ariaLabel="Technology partners"
+            />
+          </div>
+          <div className="relative overflow-hidden h-[80px] md:h-[120px]">
+            <LogoLoop
+              logos={techLogosRow2}
+              speed={100}
+              direction="right"
+              logoHeight="clamp(40px, 8vw, 75px)"
+              gap="clamp(30px, 6vw, 60px)"
+              hoverSpeed={0}
+              scaleOnHover
+              fadeOut
+              fadeOutColor="#ffffff"
+              ariaLabel="Technology partners"
+            />
+          </div>
         </div>
       </motion.div>
     </section>
