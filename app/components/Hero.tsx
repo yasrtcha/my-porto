@@ -110,7 +110,7 @@ export default function Hero() {
             <PixelTransition
               firstContent={
                 <img
-                  src="https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1786257592/profile_kslxuv.webp"
+                  src="https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto,w_800/v1786257592/profile_kslxuv.webp"
                   alt="Default pixel transition content, its me!"
                   fetchPriority="high"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
@@ -118,7 +118,7 @@ export default function Hero() {
               }
               secondContent={
                 <img
-                  src="https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1786257535/cat_it_g0znlh.webp"
+                  src="https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto,w_800/v1786257535/cat_it_g0znlh.webp"
                   alt="default pixel transition content, a cat!"
                   fetchPriority="high"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
