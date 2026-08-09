@@ -47,16 +47,15 @@ export default function Navbar() {
 
 	return (
 		<nav
-			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b ${
-				isMobileMenuOpen 
+			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b ${isMobileMenuOpen
 					? 'bg-background border-border'
 					: scrolled
-					? 'bg-background/70 backdrop-blur-[18px] border-border'
-					: 'bg-transparent backdrop-blur-none border-transparent'
+						? 'bg-background/70 backdrop-blur-[18px] border-border'
+						: 'bg-transparent backdrop-blur-none border-transparent'
 				}`}
 		>
 			<div className="max-w-[1280px] mx-auto px-5 md:px-8 h-[72px] md:h-[80px] flex justify-between items-center">
-            <Link href="/" className="font-medium text-2xl tracking-tight z-50 relative">
+				<Link href="/" className="font-medium text-2xl tracking-tight z-50 relative">
 					Danar Rais Alhakim.
 				</Link>
 

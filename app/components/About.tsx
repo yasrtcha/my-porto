@@ -83,14 +83,14 @@ export default function About() {
               <PixelTransition
                 firstContent={
                   <img
-                    src="/formal-batik.webp"
+                    src="https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1786257457/profile_about_cy8exo.webp"
                     alt="Batik Formal"
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
                 }
                 secondContent={
                   <img
-                    src="https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785603107/cat_it_pkkqqk.jpg"
+                    src="https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1786257535/cat_it_g0znlh.webp"
                     alt="default pixel transition content, a cat!"
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />

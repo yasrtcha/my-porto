@@ -27,7 +27,7 @@ const certificates: Certificate[] = [
       ID: "Badan Nasional Sertifikasi Profesi (BNSP)"
     },
     year: "2026",
-    image: "/sertifikat/JuniorWebDev-1.webp",
+    image: "https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1786259029/JuniorWebDev-1_e1m9lg.webp",
   },
   {
     id: "cert-2",
@@ -37,7 +37,7 @@ const certificates: Certificate[] = [
       ID: "AI Opportunity"
     },
     year: "2026",
-    image: "/sertifikat/AI.webp",
+    image: "https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1786259028/AI_g7lekn.webp",
   },
   {
     id: "cert-3",
@@ -47,7 +47,7 @@ const certificates: Certificate[] = [
       ID: "Brawijaya Language Center"
     },
     year: "2026",
-    image: "/sertifikat/BLC.webp",
+    image: "https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1786259028/BLC_vr8smt.webp",
   },
 ];
 
@@ -96,6 +96,7 @@ const AccordionItem = ({ cert, isOpen, onClick, onImageClick, t, lang }: Accordi
                     src={cert.image}
                     alt={cert.title}
                     fill
+                    unoptimized
                     className="object-contain"
                   />
                 ) : (
@@ -184,6 +185,7 @@ export default function Certificates() {
                   src={selectedImage}
                   alt="Certificate"
                   fill
+                  unoptimized
                   className="object-contain"
                 />
               </div>

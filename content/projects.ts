@@ -60,7 +60,7 @@ export const projects: Project[] = [
     platform: 'Web Application',
     isPrivate: false,
     githubUrl: 'https://github.com/yasrtcha/sponsorea',
-    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785598347/mockupp_sponsorea_pyrb3s.png',
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1786257768/hero_sponsorea_bau7sx.webp',
     overview: {
       ID: [
         'Sponsorea adalah platform marketplace yang dikembangkan sebagai proyek Tugas Akhir (TA) untuk mempertemukan penyelenggara event dengan perusahaan penyedia sponsorship.',
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     duration: { ID: '2 Bulan', EN: '2 Months' },
     platform: 'Website & Mobile Application',
     isPrivate: true,
-    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785598801/hero_r9irpr.png',
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1786258125/hero_wellscpace_pjkica.webp',
     overview: {
       ID: [
         'WellSpace adalah aplikasi mobile dan website berbasis kesehatan mental yang membantu pengguna memantau kondisi emosional serta menjaga kesejahteraan mental melalui fitur Mood Tracker, Q&A, dan Kutipan Harian.',
@@ -224,7 +224,7 @@ export const projects: Project[] = [
     platform: 'Web Dashboard & IoT',
     isPrivate: false,
     githubUrl: 'https://github.com/yasrtcha',
-    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785650759/hero_agfrqv.png',
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1786258237/hero_waterlevel_oknujj.webp',
     overview: {
       ID: [
         'Proyek ini merupakan sistem monitoring berbasis Internet of Things (IoT) yang menggunakan sensor ultrasonik HC-SR04 untuk mengukur ketinggian air.',
@@ -420,7 +420,7 @@ export const projects: Project[] = [
     duration: { ID: '2 Minggu', EN: '2 Weeks' },
     platform: 'Website',
     isPrivate: false,
-    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785769347/hero0_wlz61y.png',
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1786258350/hero_portofolio_fiyimk.webp',
     overview: {
       ID: ['Website portfolio ini dibuat sebagai media untuk menampilkan profil, project, pengalaman, dan skill yang saya miliki sebagai lulusan Teknologi Informasi Universitas Brawijaya. Website dirancang dengan konsep modern dan minimalis agar informasi dapat tersampaikan dengan jelas dan profesional.'],
       EN: ['This portfolio website was created as a medium to display my profile, projects, experiences, and skills as a graduate of Information Technology at Universitas Brawijaya. The website is designed with a modern and minimalist concept to ensure information is conveyed clearly and professionally.']
@@ -467,7 +467,7 @@ export const projects: Project[] = [
     platform: 'Mobile App',
     isPrivate: false,
     figmaUrl: 'https://www.figma.com/design/dkL5swvFYxtmnOdF7cjFaz/FeelPlay?node-id=0-1&t=XvRNb9evCBqGrzvO-1',
-    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1785770887/hero_qbpdk7.png',
+    heroImage: 'https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto/v1786258424/hero_feelplay_ewbzgu.webp',
     overview: {
       ID: [
         'FeelPlay merupakan project desain UI/UX untuk aplikasi musik yang berfokus pada rekomendasi lagu berdasarkan mood pengguna.',

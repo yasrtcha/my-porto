@@ -193,11 +193,12 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
               onClick={() => project.heroImage && setSelectedPopupImage(project.heroImage)}
             >
               {project.heroImage ? (
-                <CldImage
+                <img
                   src={project.heroImage}
                   alt={project.title}
-                  width={1280}
-                  height={800}
+                  width="1280"
+                  height="800"
+                  fetchPriority="high"
                   className="w-full h-auto object-cover"
                 />
               ) : (
@@ -258,7 +259,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                 {...fadeUp}
                 id="approach"
                 ref={(el) => { sectionRefs.current["approach"] = el; }}
-                className="flex flex-col gap-10 py-14 border-b border-divider scroll-mt-32"
+                className="flex flex-col gap-8 py-14 border-b border-divider scroll-mt-32"
               >
                 <div className="flex items-baseline gap-4">
                   <span className="font-mono text-sm text-muted">03</span>
@@ -266,9 +267,9 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                 </div>
 
                 {project.rolesDetails.length > 0 && (
-                  <div className="flex flex-col divide-y divide-divider border-t border-divider">
+                  <div className="flex flex-col gap-6">
                     {project.rolesDetails.map((r, i) => (
-                      <div key={i} className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-3 md:gap-8 py-6">
+                      <div key={i} className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-3 md:gap-8">
                         <h3 className="text-base font-medium text-primary">{r.title[lang]}</h3>
                         <ul className="flex flex-col gap-3">
                           {r.tasks[lang].map((task, j) => (
