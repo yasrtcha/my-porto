@@ -48,27 +48,27 @@ export default function Contact() {
 
         <motion.div variants={revealVariants} className="flex flex-col gap-10 max-w-[1024px] mx-auto w-full">
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <a href="mailto:danarraisa@gmail.com" className="flex items-center hover:scale-[1.1] transition-transform group">
+            <a href="mailto:danarraisa@gmail.com" aria-label="Email" className="flex items-center hover:scale-[1.1] transition-transform group">
               <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
                 <Mail className="w-6 h-6 text-primary" />
               </div>
             </a>
-            <a href="https://wa.me/085747784405" target="_blank" rel="noopener noreferrer" className="flex items-center hover:scale-[1.1] transition-transform group">
+            <a href="https://wa.me/085747784405" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" className="flex items-center hover:scale-[1.1] transition-transform group">
               <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
                 <FaWhatsapp className="w-6 h-6 text-primary" />
               </div>
             </a>
-            <a href="https://www.linkedin.com/in/danar-rais-alhakim/" target="_blank" rel="noopener noreferrer" className="flex items-center hover:scale-[1.1] transition-transform group">
+            <a href="https://www.linkedin.com/in/danar-rais-alhakim/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="flex items-center hover:scale-[1.1] transition-transform group">
               <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
                 <FiLinkedin className="w-6 h-6 text-primary" />
               </div>
             </a>
-            <a href="https://github.com/yasrtcha" target="_blank" rel="noopener noreferrer" className="flex items-center hover:scale-[1.1] transition-transform group">
+            <a href="https://github.com/yasrtcha" aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="flex items-center hover:scale-[1.1] transition-transform group">
               <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
                 <FiGithub className="w-6 h-6 text-primary" />
               </div>
             </a>
-            <a href="https://instagram.com/danarraisal" target="_blank" rel="noopener noreferrer" className="flex items-center hover:scale-[1.1] transition-transform group">
+            <a href="https://instagram.com/danarraisal" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="flex items-center hover:scale-[1.1] transition-transform group">
               <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
                 <FiInstagram className="w-6 h-6 text-primary" />
               </div>
