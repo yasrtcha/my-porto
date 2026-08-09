@@ -53,22 +53,22 @@ export default function Contact() {
                 <Mail className="w-6 h-6 text-primary" />
               </div>
             </a>
-            <a href="https://wa.me/085747784405" target="_blank" className="flex items-center hover:scale-[1.1] transition-transform group">
+            <a href="https://wa.me/085747784405" target="_blank" rel="noopener noreferrer" className="flex items-center hover:scale-[1.1] transition-transform group">
               <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
                 <FaWhatsapp className="w-6 h-6 text-primary" />
               </div>
             </a>
-            <a href="https://www.linkedin.com/in/danar-rais-alhakim/" target="_blank" className="flex items-center hover:scale-[1.1] transition-transform group">
+            <a href="https://www.linkedin.com/in/danar-rais-alhakim/" target="_blank" rel="noopener noreferrer" className="flex items-center hover:scale-[1.1] transition-transform group">
               <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
                 <FiLinkedin className="w-6 h-6 text-primary" />
               </div>
             </a>
-            <a href="https://github.com/yasrtcha" target="_blank" className="flex items-center hover:scale-[1.1] transition-transform group">
+            <a href="https://github.com/yasrtcha" target="_blank" rel="noopener noreferrer" className="flex items-center hover:scale-[1.1] transition-transform group">
               <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
                 <FiGithub className="w-6 h-6 text-primary" />
               </div>
             </a>
-            <a href="https://instagram.com/danarraisal" target="_blank" className="flex items-center hover:scale-[1.1] transition-transform group">
+            <a href="https://instagram.com/danarraisal" target="_blank" rel="noopener noreferrer" className="flex items-center hover:scale-[1.1] transition-transform group">
               <div className="p-4 bg-surface group-hover:bg-background rounded-full transition-colors shadow-sm">
                 <FiInstagram className="w-6 h-6 text-primary" />
               </div>

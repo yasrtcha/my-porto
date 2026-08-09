@@ -10,7 +10,10 @@ import { dictionary } from '@/content/dictionary';
 interface Certificate {
   id: string;
   title: string;
-  issuer: string;
+  issuer: {
+    EN: string;
+    ID: string;
+  };
   year: string;
   image: string;
 }
@@ -19,22 +22,31 @@ const certificates: Certificate[] = [
   {
     id: "cert-1",
     title: "BNSP Certificate-Junior Web Development",
-    issuer: "Udemy",
-    year: "2024",
+    issuer: {
+      EN: "Indonesian Professional Certification Authority",
+      ID: "Badan Nasional Sertifikasi Profesi (BNSP)"
+    },
+    year: "2026",
     image: "/sertifikat/JuniorWebDev-1.webp",
   },
   {
     id: "cert-2",
-    title: "Certificate of ResponsibleAI by AI Opportunity",
-    issuer: "Vercel",
-    year: "2024",
+    title: "Certificate of Responsible AI by AI Opportunity",
+    issuer: {
+      EN: "AI Opportunity",
+      ID: "AI Opportunity"
+    },
+    year: "2026",
     image: "/sertifikat/AI.webp",
   },
   {
     id: "cert-3",
     title: " Brawijaya English Proficiency Test (BEPT)",
-    issuer: "Frontend Masters",
-    year: "2023",
+    issuer: {
+      EN: "Brawijaya Language Center",
+      ID: "Brawijaya Language Center"
+    },
+    year: "2026",
     image: "/sertifikat/BLC.webp",
   },
 ];
@@ -44,9 +56,11 @@ interface AccordionItemProps {
   isOpen: boolean;
   onClick: () => void;
   onImageClick: (image: string) => void;
+  t: any;
+  lang: "EN" | "ID";
 }
 
-const AccordionItem = ({ cert, isOpen, onClick, onImageClick }: AccordionItemProps) => {
+const AccordionItem = ({ cert, isOpen, onClick, onImageClick, t, lang }: AccordionItemProps) => {
   return (
     <div className="border-t border-border">
       <button
@@ -92,10 +106,10 @@ const AccordionItem = ({ cert, isOpen, onClick, onImageClick }: AccordionItemPro
               </div>
               <div className="flex flex-col gap-2 text-left">
                 <p className="text-sm text-secondary">
-                  <span className="font-medium">Issued by:</span> {cert.issuer}
+                  <span className="font-medium">{t.issuedBy}</span> {cert.issuer[lang]}
                 </p>
                 <p className="text-sm text-secondary">
-                  <span className="font-medium">Year:</span> {cert.year}
+                  <span className="font-medium">{t.year}</span> {cert.year}
                 </p>
               </div>
             </div>
@@ -132,6 +146,8 @@ export default function Certificates() {
                 isOpen={openId === cert.id}
                 onClick={() => setOpenId(openId === cert.id ? null : cert.id)}
                 onImageClick={setSelectedImage}
+                t={t}
+                lang={lang as "EN" | "ID"}
               />
               {index === certificates.length - 1 && (
                 <div className="border-b border-border"></div>

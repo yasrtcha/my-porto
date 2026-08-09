@@ -17,8 +17,12 @@ export const dictionary = {
     about: {
       tag: "ABOUT",
       heading: "Bridging technology, design, and problem solving.",
+      education: "Education",
+      myEducation: "My Education",
       certificates: "Certificates",
       sertif: "My Certificates",
+      issuedBy: "Issued by:",
+      year: "Year:",
       para1: "I am an Information Technology graduate from Brawijaya University with a strong interest in web development, user interface design, and digital project management. For me, technology is not only about writing code but also about understanding user needs and creating solutions that deliver real value.",
       para2: "Through academic projects, organizational experiences, and internships, I have developed the ability to collaborate, solve problems, and turn ideas into functional and user-friendly digital products. I am always eager to learn new technologies and continuously improve my skills to build better digital experiences.",
       stats: {
@@ -96,8 +100,12 @@ export const dictionary = {
     about: {
       tag: "TENTANG",
       heading: "Menjembatani teknologi, desain, dan pemecahan masalah.",
+      education: "Pendidikan",
+      myEducation: "Pendidikan Saya",
       certificates: "Sertifikat",
       sertif: "Sertifikat Saya",
+      issuedBy: "Diterbitkan oleh:",
+      year: "Tahun:",
       para1: "Saya adalah lulusan Teknologi Informasi dari Universitas Brawijaya dengan minat kuat pada pengembangan web, desain antarmuka pengguna, dan manajemen proyek digital. Bagi saya, teknologi bukan hanya tentang menulis kode, tetapi juga tentang memahami kebutuhan pengguna dan menciptakan solusi yang memberikan nilai nyata.",
       para2: "Melalui proyek akademik, pengalaman organisasi, dan magang, saya telah mengembangkan kemampuan untuk berkolaborasi, memecahkan masalah, dan mengubah ide menjadi produk digital yang fungsional dan ramah pengguna. Saya selalu antusias mempelajari teknologi baru dan terus meningkatkan keterampilan saya untuk membangun pengalaman digital yang lebih baik.",
       stats: {

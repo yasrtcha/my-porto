@@ -44,3 +44,10 @@ design.md
 
 #agent
 .agents/
+AGENTS.md
+CLAUDE.md
+skills-lock.json
+
+# temporary & local
+temp_old_slug.txt
+.vscode/

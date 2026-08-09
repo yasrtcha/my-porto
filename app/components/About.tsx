@@ -5,6 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { dictionary } from '@/content/dictionary';
 import LogoLoop from './LogoLoop';
 import Certificates from './Certificates';
+import Education from './Education';
 import PixelTransition from './PixelTransition';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiLaravel, SiFigma, SiPhp, SiMysql, SiFlutter, SiGithub, SiLaragon, SiJavascript } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
@@ -113,6 +114,8 @@ export default function About() {
           </motion.div>
         </div>
 
+        <Education />
+
         <Certificates />
 
         <div className="flex flex-col gap-6 md:gap-8 mt-10 md:mt-14">
@@ -126,7 +129,7 @@ export default function About() {
               hoverSpeed={0}
               scaleOnHover
               fadeOut
-              fadeOutColor="#ffffff"
+              fadeOutColor="var(--background)"
               ariaLabel="Technology partners"
             />
           </div>
@@ -140,7 +143,7 @@ export default function About() {
               hoverSpeed={0}
               scaleOnHover
               fadeOut
-              fadeOutColor="#ffffff"
+              fadeOutColor="var(--background)"
               ariaLabel="Technology partners"
             />
           </div>
