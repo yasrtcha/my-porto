@@ -78,8 +78,11 @@ export default function About() {
             </div>
           </motion.div>
 
-          <motion.div variants={revealVariants} className="flex justify-center items-center h-full">
-            <div className="relative w-full max-w-[320px] md:max-w-[400px]">
+          <div className="flex justify-center md:justify-end items-center h-full">
+            <motion.div
+              variants={revealVariants}
+              className="relative w-full max-w-[320px] md:max-w-[400px]"
+            >
               <PixelTransition
                 firstContent={
                   <img
@@ -110,8 +113,8 @@ export default function About() {
                   boxShadow: "none",
                 }}
               />
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
 
         <Education />

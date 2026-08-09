@@ -42,10 +42,7 @@ export default function Hero() {
 
   return (
     <section className="relative flex items-center pt-24 pb-8 md:pt-32 md:pb-8 overflow-hidden">
-      {/* Subtle Radial Gradient Background */}
-      <div className="absolute inset-0 pointer-events-none flex justify-center items-center">
-        <div className="w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] opacity-50 dark:opacity-20" />
-      </div>
+
 
       <div className="max-w-[1280px] w-full mx-auto px-5 md:px-8 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center">
         <motion.div
@@ -110,7 +107,7 @@ export default function Hero() {
             <PixelTransition
               firstContent={
                 <img
-                  src="https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto,w_800/v1786257592/profile_kslxuv.webp"
+                  src="https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto,w_600/v1786257592/profile_kslxuv.webp"
                   alt="Default pixel transition content, its me!"
                   fetchPriority="high"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
@@ -118,9 +115,8 @@ export default function Hero() {
               }
               secondContent={
                 <img
-                  src="https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto,w_800/v1786257535/cat_it_g0znlh.webp"
+                  src="https://res.cloudinary.com/oyuxswwy/image/upload/f_auto,q_auto,w_600/v1786257535/cat_it_g0znlh.webp"
                   alt="default pixel transition content, a cat!"
-                  fetchPriority="high"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
               }

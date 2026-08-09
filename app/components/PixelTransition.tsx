@@ -50,7 +50,8 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
       for (let col = 0; col < gridSize; col++) {
         const pixel = document.createElement('div');
         pixel.classList.add('pixelated-image-card__pixel');
-        pixel.classList.add('absolute', 'hidden');
+        pixel.classList.add('absolute');
+        pixel.style.opacity = '0';
         pixel.style.backgroundColor = pixelColor;
 
         const size = 100 / gridSize;
@@ -79,13 +80,13 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
       delayedCallRef.current.kill();
     }
 
-    gsap.set(pixels, { display: 'none' });
+    gsap.set(pixels, { opacity: 0 });
 
     const totalPixels = pixels.length;
     const staggerDuration = animationStepDuration / totalPixels;
 
     gsap.to(pixels, {
-      display: 'block',
+      opacity: 1,
       duration: 0,
       stagger: {
         each: staggerDuration,
@@ -99,7 +100,7 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
     });
 
     gsap.to(pixels, {
-      display: 'none',
+      opacity: 0,
       duration: 0,
       delay: animationStepDuration,
       stagger: {
